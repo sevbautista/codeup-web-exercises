@@ -31,9 +31,9 @@ console.log(price);
 
 
 //let price = "2.7";
-price.toFixed(2);
-//undefined
-console.log(price);
+//price.toFixed(2);
+//will produce an error
+//console.log(price);
 
 isNaN(0);
 //false
@@ -47,40 +47,46 @@ isNaN("")
 //false
 console.log(isNaN(""));
 
-
-
 isNaN("string")
 console.log(isNaN("string"));
-
 //true
+
 isNaN("0")
 console.log(isNaN("0"));
-
 //false
+
 isNaN("1")
 console.log(isNaN("1"));
 //false
+
 isNaN("3.145")
 console.log(isNaN("3.145"));
 //false
+
 isNaN(Number.MAX_VALUE)
 console.log(isNaN(Number.MAX_VALUE));
 //false
+
 isNaN(Infinity)
 console.log(isNaN(Infinity));
 //false
+
 isNaN("true")
 console.log(isNaN("true"));
 //true
+
 isNaN(true)
 console.log(isNaN(true));
   //false
+
 isNaN("false")
 console.log(isNaN("false"));
 //true
+
 isNaN(false)
 console.log(isNaN(false));
   //false
+
 // to illustrate why the isNaN() function is needed:
 console.log(NaN == NaN);
 //false though i'm not entirely sure why
@@ -92,12 +98,13 @@ console.log(!true)
 !false
 console.log(!false);
 //true
+
 !!true
 console.log(!!true);
 //true
-console.log(!!true);
 
 !!false
+console.log(!!false);
 //false
 
 !!0
@@ -135,3 +142,52 @@ console.log(!!"false")
 !!"0"
 console.log(!!"0");
 //true
+
+let sample = "Hello Codeup"
+console.log(sample.length)
+
+console.log(sample + " Students")
+
+console.log(sample + " Class")
+
+console.log("line 153 " + sample.indexOf("C"))
+console.log(sample.indexOf("C"))
+// capital C returns 6 as position
+console.log(sample.indexOf("c"))
+// lowercase c returns -1 as position
+console.log(sample.indexOf("p"))
+
+console.log(sample.substring(6,12))
+//question 3
+
+//$3 per day
+//little mermaid 3 days
+//brother bear 5 days
+//hercules 1 day
+//how much will I have to pay? 27
+
+let p = 3
+let little = 3
+let bear = 5
+let hercules = 1
+
+console.log((little + bear + hercules) * p)
+
+//3b
+//Google pays $400 for 6 hours for $2400
+//Amazon pays $380 for 4 hours for $1520
+// Facebook pays $350 for 10 hours for $3500
+// how much will I receive this week? $7420
+
+let g = 400
+let ama = 380
+let f = 350
+console.log((g * 6) + (ama * 4) + (f * 10))
+
+//4
+
+let username = 'codeup';
+let password = 'notastrongpassword';
+
+
+

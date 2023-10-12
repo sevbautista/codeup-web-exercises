@@ -17,7 +17,8 @@ console.log (6%4)
 
 '3 + 4 is ' + 3 + 4
 //how could you make this produce the correct output?
-console.log['3 + 4 is ' + (3 + 4)]
+console.log('3 + 4 is ' + 3 + 4)
+//add parenthesis around the input
 
 0 < 0
 console.log(0 < 0)
