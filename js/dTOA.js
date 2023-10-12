@@ -15,7 +15,7 @@ let e = false;
 d++;
 //NaN
 e++;
-//1
+//1 i got this different
 console.log(d);
 console.log(e);
 
@@ -29,11 +29,11 @@ price.toFixed(2);
 //2.70
 console.log(price);
 
-
-//let price = "2.7";
+// let price = "2.7";
 //price.toFixed(2);
 //will produce an error
 //console.log(price);
+//parseInt(price) would be used to make it work
 
 isNaN(0);
 //false
@@ -58,6 +58,8 @@ console.log(isNaN("0"));
 isNaN("1")
 console.log(isNaN("1"));
 //false
+///these are numbers because although the data type is a string the actual content is a number
+
 
 isNaN("3.145")
 console.log(isNaN("3.145"));
@@ -77,7 +79,7 @@ console.log(isNaN("true"));
 
 isNaN(true)
 console.log(isNaN(true));
-  //false
+//false
 
 isNaN("false")
 console.log(isNaN("false"));
@@ -89,7 +91,7 @@ console.log(isNaN(false));
 
 // to illustrate why the isNaN() function is needed:
 console.log(NaN == NaN);
-//false though i'm not entirely sure why
+//false, NaN is a falsy value
 
 !true
 //false
@@ -124,7 +126,7 @@ console.log(!!-1)
 console.log(!!0.1)
 
 !!"hello"
-//true but not understanding how
+//true - not an empty string
 console.log(!!"hello")
 
 !!""
@@ -146,18 +148,35 @@ console.log(!!"0");
 let sample = "Hello Codeup"
 console.log(sample.length)
 
+//console.log(sample.toLowerCase)
+
 console.log(sample + " Students")
 
 console.log(sample + " Class")
 
-console.log("line 153 " + sample.indexOf("C"))
+
+//     sample+= " Students" shorthand
+
+sample += " Students"
+console.log(sample)
+
+// replace students with class
+//let sample = "Hello Codeup Students"
+console.log(sample.replace("Students", "Class"))
+
+// console.log("line 153 " + sample.indexOf("C"))
 console.log(sample.indexOf("C"))
 // capital C returns 6 as position
 console.log(sample.indexOf("c"))
 // lowercase c returns -1 as position
+
+//checking index for following question
 console.log(sample.indexOf("p"))
 
+// another method
+// console.log(sample.substring(sample.indexOf("C"), 1 + sample.indexOf("p")))
 console.log(sample.substring(6,12))
+
 //question 3
 
 //$3 per day
@@ -166,12 +185,19 @@ console.log(sample.substring(6,12))
 //hercules 1 day
 //how much will I have to pay? 27
 
+//naming variables always use lowercase for first letter of first world and capital for following words
 let p = 3
 let little = 3
 let bear = 5
 let hercules = 1
 
 console.log((little + bear + hercules) * p)
+// another method
+// let littleCost = little * p;
+// let bearCost = bear * p;
+// let herculesCost = hercules * price;
+// let totalCost = littleCost + bearCost + herculesCost
+// console.log(totalCost)
 
 //3b
 //Google pays $400 for 6 hours for $2400
@@ -183,6 +209,16 @@ let g = 400
 let ama = 380
 let f = 350
 console.log((g * 6) + (ama * 4) + (f * 10))
+// additional variables
+let gHours = 6
+let amaHours = 4
+let fHours = 10
+
+let totalPay = (g * gHours) + (ama * amaHours) + (f * fHours)
+console.log(totalPay)
+//template literal version of the same result
+console.log(`Your total pay is ${totalPay}`)
+
 
 //4
 
@@ -191,11 +227,21 @@ let password = 'notastrongpassword';
 
 let var1 = password.length>=5
 console.log(var1)
-let var2 = password.includes(username)
+
+//another method
+//let notInclude = password !== username;
+// console.log(notInclude)
+
+let var2 = !password.includes(username)
 console.log(var2)
+
+
 let var3 = username.length<=20
 console.log(var3)
-let var4 = (password + username).includes("")
+
+let var4 = (username.trim() === username) && (password.trim() === password);
+//i used but did not find it correctly
+//let var4 = (password + username).includes("")
 console.log(var4)
 //didn't understand boolean values within a variable at first
 
