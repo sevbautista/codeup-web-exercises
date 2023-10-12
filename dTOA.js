@@ -189,5 +189,13 @@ console.log((g * 6) + (ama * 4) + (f * 10))
 let username = 'codeup';
 let password = 'notastrongpassword';
 
-
+let var1 = password.length>=5
+console.log(var1)
+let var2 = password.includes(username)
+console.log(var2)
+let var3 = username.length<=20
+console.log(var3)
+let var4 = (password + username).includes("")
+console.log(var4)
+//didn't understand boolean values within a variable at first
 
