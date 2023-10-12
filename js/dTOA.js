@@ -240,7 +240,7 @@ let var3 = username.length<=20
 console.log(var3)
 
 let var4 = (username.trim() === username) && (password.trim() === password);
-//i used but did not find it correctly
+//i used the following but did not find it correctly
 //let var4 = (password + username).includes("")
 console.log(var4)
 //didn't understand boolean values within a variable at first
