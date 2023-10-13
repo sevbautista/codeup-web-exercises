@@ -26,8 +26,6 @@ console.log(`Great, ${userInput} is my favorite color too!`)
 // let totalCost = littleCost + bearCost + herculesCost
 // console.log(totalCost)
 
-
-
 let userInput1 = parseInt (prompt("How many days did you rent the Little Mermaid for?"))
  alert(`${userInput1}"?"`)
 
@@ -41,7 +39,7 @@ let pa = 3
 let cost = (userInput1* pa) + (userInput2 * pa) +(userInput3 * pa)
 
 //console.log((userInput1 + userInput2 + userInput3) * pa)
-//console.log(`So then if they cost $3 a day, you owe ${cost} `)x`
+console.log(`So then if they cost $3 a day, you owe ${cost} `)
 alert(`So then if they cost $3 a day, you owe ${cost} `)
 
 // Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate per hour.
