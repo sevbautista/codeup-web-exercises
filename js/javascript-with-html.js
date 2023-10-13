@@ -7,8 +7,8 @@
 // alert("Hello Lasso")
 
 //confirm
-let confirmed = confirm("Are you sure you're in the correct cohort?")
-console.log(confirmed)
+// let confirmed = confirm("Are you sure you're in the correct cohort?")
+// console.log(confirmed)
 
 
 

@@ -28,6 +28,8 @@
 // let totalCost = littleCost + bearCost + herculesCost
 // console.log(totalCost)
 
+
+
 let userInput1 = prompt("How many days did you rent the Little Mermaid for?")
  alert(`${userInput1}"?"`)
 
@@ -40,6 +42,6 @@ alert (`${userInput3}"?`)
 let pa = 3
 let cost = ((userInput1 + userInput2 + userInput3) * pa)
 
-console.log((userInput1 + userInput2 + userInput3) * pa)
+//console.log((userInput1 + userInput2 + userInput3) * pa)
 console.log(`So then if they cost $3 a day, you owe ${cost} `)
 
