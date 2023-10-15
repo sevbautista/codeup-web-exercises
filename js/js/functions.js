@@ -115,7 +115,7 @@ alert (`Then you should tip $${tipAmount}`)
 
 function applyDiscount(priceBeforeDiscount, discountPercentage) {
 
-    return (100 *discountPercentage) / priceBeforeDiscount;
+   return (100 *discountPercentage)( / priceBeforeDiscount);
 }
 
 console.log(applyDiscount(10, .1))
