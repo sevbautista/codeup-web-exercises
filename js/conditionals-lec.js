@@ -29,7 +29,7 @@
 //
 // }
 // || operates as an "or"
-
+//
 // let letsPlay = confirm("Do you want to play");
 //
 // if (letsPlay) {
@@ -37,7 +37,7 @@
 // } else {
 //     console.log("Maybe next time")
 // }
-//
+
 // const username = "user";
 // const password = "password";
 //

@@ -22,30 +22,64 @@
  * console.logging the function's return value
  */
 
+// function analyzeColor(input) {
+//     if (input === "red") {
+//         return "This is the best color!";
+//     } else {
+//         return "Don't like this color.";
+//     }
+// }
+
+// console.log(analyzeColor("red"))
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-const randomColor = colors[Math.floor(Math.random() * colors.length)];
+// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// const randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
+// console.log(analyzeColor(randomColor))
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColor(color) {
+    switch (color) {
+        case 'red':
+            return "Bad color!"
+        case 'orange':
+            return "What a great color!"
+        case 'yellow':
+            return "Bad color!"
+        case 'green':
+            return "What a great color!"
+        case 'blue':
+            return "Bad color!"
+        case 'indigo':
+            return "What a great color!"
+        case 'violet':
+            return "Bad color!"
 
+    }
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+let userInput1= prompt("Pick a color, user!")
+// console.log(analyzeColor(userInput1))
+alert(analyzeColor(userInput1))
 
 /* ########################################################################## */
 
@@ -68,6 +102,37 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+// function calculateTotal(luckyNumber, totalAmount) {
+//     if (luckyNumber === 5 && discountPercent === 100)
+//         if (luckyNumber === 4 && discountPercent === 50)
+//             if (luckyNumber === 3 && discountPercent === 35)
+//                 if (luckyNumber === 2 && discountPercent === 25)
+//                     if (luckyNumber === 1 && discountPercent === 10)
+//                         if (luckyNumber === 0 && discountPercent === 0)
+//
+//                             return (`totalAmount - (total amount * (${discountPercent}/100))`)
+// }
+//     function calculateTotal(luckyNumber, totalAmount) {
+//     if (luckyNumber === 5 && discountPercent === 100 || luckyNumber === 4 && discountPercent === 50 || luckyNumber === 3 && discountPercent === 35 || luckyNumber === 2 && discountPercent === 25)|| luckyNumber === 1 && discountPercent === 10 || luckyNumber === 0 && discountPercent === 0)
+//
+// return (`totalAmount - (total amount * (${discountPercent}/100))`)
+//
+// //50 - (50 (*10/100 ))=
+//
+// }
+// console.log(calculateTotal(5, 50)
+
+//50 - (50 (*10/100 ))=
+
+// }
+function calculateTotal(luckyNumber, totalAmount) {
+    let discountPercent =35;
+        return (`${totalAmount} - (${totalAmount} * (${discountPercent}/100))`)
+
+//50 - (50 (*10/100 ))=
+
+    }
+    console.log(calculateTotal(3, 35))
 
 /**
  * TODO:
