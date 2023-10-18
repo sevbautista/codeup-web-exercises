@@ -230,3 +230,43 @@ const luckyNumber = Math.floor(Math.random() * 6);
 //make sure your operators are being used correctly
 // zero, 0 is neither even nor odd
 //breaking it down into separate functions
+// let userConfirm = confirm("Would you like to enter a number?")
+//
+// if(userConfirm) {
+//     let userInput = parseFloat(prompt("Enter any number"));
+//     if(isNaN(userInput)) {
+//         alert("You didn't input a number");
+//     }else {
+//         alert(isEvenOdd(userInput))
+//         alert(addOneHundred(userInput))
+//         alert(posNeg(userInput))
+//     }
+// }
+//
+// // Even or Odd function
+// function isEvenOdd(num) {
+//     if(num === 0){
+//         return `${num} is neither odd or even`
+//     } else if(num % 2 === 0) {
+//         return `${num} is an even number!`
+//     } else if (num % 2 ===1){
+//         return `${num} is an odd number!`
+//     }
+// }
+//
+// // add 100 function
+// function addOneHundred(num) {
+//     return `${num} + 100 is ${num + 100}`
+// }
+//
+// // pos or neg function
+// function posNeg(num){
+//     if(num > 0) {
+//         return`${num} is a positive number`
+//     }else if (num < 0) {
+//         return `${num} is a negative number`
+//     }else {
+//         return `${num} is nor positive or negative`
+//     }
+// }
+//review the above
