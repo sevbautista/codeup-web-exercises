@@ -15,7 +15,8 @@ let e = false;
 d++;
 //NaN
 e++;
-//1 i got this different
+//1
+
 console.log(d);
 console.log(e);
 
@@ -28,12 +29,8 @@ let price = 2.7;
 price.toFixed(2);
 //2.70
 console.log(price);
-
-// let price = "2.7";
-//price.toFixed(2);
-//will produce an error
-//console.log(price);
-//parseInt(price) would be used to make it work
+// console.log(parseInt(price));
+// using parseInt(price) removes the decimals
 
 isNaN(0);
 //false
@@ -148,18 +145,17 @@ console.log(!!"0");
 let sample = "Hello Codeup"
 console.log(sample.length)
 
-//console.log(sample.toLowerCase)
+console.log(sample.toUpperCase());
+console.log(sample.toLowerCase());
 
 console.log(sample + " Students")
 
 console.log(sample + " Class")
 
 
-//     sample+= " Students" shorthand
-
-sample += " Students"
-console.log(sample)
-
+// sample += " Students"
+// console.log(sample)
+//
 // replace students with class
 //let sample = "Hello Codeup Students"
 console.log(sample.replace("Students", "Class"))
@@ -169,6 +165,7 @@ console.log(sample.indexOf("C"))
 // capital C returns 6 as position
 console.log(sample.indexOf("c"))
 // lowercase c returns -1 as position
+// this isn't in the sample so it returns -1 because it falls outside of that
 
 //checking index for following question
 console.log(sample.indexOf("p"))
