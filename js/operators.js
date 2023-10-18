@@ -19,6 +19,7 @@ console.log (6%4)
 //how could you make this produce the correct output?
 console.log('3 + 4 is ' + 3 + 4)
 //add parenthesis around the input
+// having trouble understanding this
 
 0 < 0
 console.log(0 < 0)
@@ -54,8 +55,7 @@ console.log(6 % 5)
 //1
 
 5 < 4 && 1 === 1
-console.log(5 < 4 && 1 === 1
-)
+console.log(5 < 4 && 1 === 1)
 //false
 
 typeof 'codeup' === 'string'
