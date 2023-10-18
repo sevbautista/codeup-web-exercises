@@ -24,9 +24,3 @@ function largestNum(num1, num2, num3){
 //     }
 // }
 // console.log(largest)
-
-//example 2
-function largestNum(input1, input2, input3) {
-    return Math.max(input1, input2, input3)
-}
-console.log(largestNum(1,2,3))
