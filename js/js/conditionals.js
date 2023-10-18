@@ -22,16 +22,23 @@
  * console.logging the function's return value
  */
 
-// function analyzeColor(input) {
-//     if (input === "red") {
-//         return "This is the best color!";
-//     } else {
-//         return "Don't like this color.";
-//     }
-// }
+function analyzeColor(input) {
+    if (input === "red") {
+        return "This is the best color!";
+    } else {
+        // else if (color === "blue"){
+        // return "blue is blue!";
+    //} else if (color === "cyan") {
+        // return "cyan is neat";
+        //else {
+        // return "I don't know anything about" + color
+        return "Don't like this color.";
+    }
+}
 
-// console.log(analyzeColor("red"))
-
+console.log(analyzeColor("red"))
+// Exercise review:
+//review else and else if statements and their use
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -47,6 +54,7 @@
  */
 
 // console.log(analyzeColor(randomColor))
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
@@ -70,6 +78,24 @@ function analyzeColor(color) {
 
     }
 }
+//Review switch statements and their use
+// function analyzeColor(color) {
+//     switch(color){
+//         case("blue"):
+//             return "sky is blue"
+//         case("red"):
+//             return "red is red"
+//         default:
+//             return "I don't know anything about that color" +color;
+//     }
+//
+// }
+// console.log(analyzeColor(cyan))
+//
+//compare use of parenthesis
+//return vs break: return will return a value, console.log will just move onto the next case
+//so you have to use break to let it move to the next statement
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -80,6 +106,7 @@ function analyzeColor(color) {
 let userInput1= prompt("Pick a color, user!")
 // console.log(analyzeColor(userInput1))
 alert(analyzeColor(userInput1))
+
 
 /* ########################################################################## */
 
@@ -113,7 +140,6 @@ alert(analyzeColor(userInput1))
 //                             return (`totalAmount - (total amount * (${discountPercent}/100))`)
 // }
 //     function calculateTotal(luckyNumber, totalAmount) {
-//     if (luckyNumber === 5 && discountPercent === 100 || luckyNumber === 4 && discountPercent === 50 || luckyNumber === 3 && discountPercent === 35 || luckyNumber === 2 && discountPercent === 25)|| luckyNumber === 1 && discountPercent === 10 || luckyNumber === 0 && discountPercent === 0)
 //
 // return (`totalAmount - (total amount * (${discountPercent}/100))`)
 //
@@ -125,15 +151,31 @@ alert(analyzeColor(userInput1))
 //50 - (50 (*10/100 ))=
 
 // }
-function calculateTotal(luckyNumber, totalAmount) {
-    let discountPercent =35;
-        return (`${totalAmount} - (${totalAmount} * (${discountPercent}/100))`)
+// function calculateTotal(luckyNumber, totalAmount) {
+//     let discountPercent =35;
+//         return (`${totalAmount} - (${totalAmount} * (${discountPercent}/100))`)
+//
+// //50 - (50 (*10/100 ))=
+//
+//     }
+//     console.log(calculateTotal(3, 35))
 
-//50 - (50 (*10/100 ))=
+// function calculateTotal(luckyNumber, totalAmount) {
+//     if luckyNumber = 5
+// }
+//
 
-    }
-    console.log(calculateTotal(3, 35))
-
+//Review:
+// putting in math in a function when it comes to division and multiplication of fraction
+// of
+// function (luckyNumber, totalAmount) {
+//     if(luckyNumber === 0){
+//         return totalAmount;
+//     } else if(luckyNumber === 1){
+//         return totalAmount - (0.10 * totalAmount);
+//     }
+// }
+//Review how math is included in functions
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -143,7 +185,12 @@ function calculateTotal(luckyNumber, totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// const luckyNumber = Math.floor(Math.random() * 6);
+const luckyNumber = Math.floor(Math.random() * 6);
+// template literals allow you to not worry about your spaces and your quotes and plus signs
+//
+//
+//
+//
 
 /**
  * TODO:
@@ -163,3 +210,23 @@ function calculateTotal(luckyNumber, totalAmount) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+//review the method
+
+//nested if/else statements keep track when using these
+// get used to using code comments to keep track of what I am doing
+// also allows me to refer back to understand where I was
+// you can group const within the function
+//alerts can be one big group or split up separately but
+//will read all from top to bottom
+//variable that is scoped within an if statement can't be called outside of that statement
+// command option l will realign code so that it is where it should be
+//if means should the conditions be true, then the following applies
+//be more descriptive with variable names, whole words or statements
+//review what float in parseFloat means and how it is used
+//if conditions can fall outside of a function
+// else at the bottom can be a "catch all"
+//make sure your operators are being used correctly
+// zero, 0 is neither even nor odd
+//breaking it down into separate functions

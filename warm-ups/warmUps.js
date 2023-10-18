@@ -15,3 +15,18 @@ function capitalizeFirstLetter (str) {
 console.log(capitalizeFirstLetter("codeup"));
 
 //I was forgetting to call the function itself, and not just the arguments, I also didn't parenthesis the string
+
+// Warmup Tuesday 17
+
+//Math.max
+
+
+function largestNum(in1, in2, in3) {
+   return Math.max(input1, input2, input3)
+}
+console.log(largestNum(10,5,2))
+
+// Do not forget about return
+// do not always need parameters, but variables are called out in math method
+
+//
