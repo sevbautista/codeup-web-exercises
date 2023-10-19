@@ -51,9 +51,17 @@
 let num = 100
 
 while (num > 0) {
-    console.log((num));
     num-= 5
-    if (num % 2 === 0);
+    if (num % 2 === 0 && num !== 0) {
     console.log(num + " Even")
+    } else {
+        console.log(num)
     }
-
+}
+//&& allows multiple equations to run within parenthesis, also check if ; is or isn't needed first before changing too much
+// while (num > 0) {
+//     console.log((num));
+//     num-= 5
+//     if (num % 2 === 0);
+//     console.log(num + " Even")
+// }
