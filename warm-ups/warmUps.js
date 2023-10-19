@@ -1,18 +1,18 @@
 //Severiano Bautista
 //Daily Warm-ups
-let name = "Severiano Bautista"
-let year = "2003"
-
-console.log('My name is ' +name + ' and the year that I graduated high school was ' + year)
+// let name = "Severiano Bautista"
+// let year = "2003"
+//
+// console.log('My name is ' +name + ' and the year that I graduated high school was ' + year)
 
 //this comment
 
 // Warmup Monday 16
 
-function capitalizeFirstLetter (str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-console.log(capitalizeFirstLetter("codeup"));
+// function capitalizeFirstLetter (str) {
+//     return str.charAt(0).toUpperCase() + str.slice(1);
+// }
+// console.log(capitalizeFirstLetter("codeup"));
 
 //I was forgetting to call the function itself, and not just the arguments, I also didn't parenthesis the string
 
@@ -21,10 +21,10 @@ console.log(capitalizeFirstLetter("codeup"));
 //Math.max
 
 
-function largestNum(in1, in2, in3) {
-   return Math.max(input1, input2, input3)
-}
-console.log(largestNum(10,5,2))
+// function largestNum(in1, in2, in3) {
+//    return Math.max(input1, input2, input3)
+// }
+// console.log(largestNum(10,5,2))
 
 // Do not forget about return
 // do not always need parameters, but variables are called out in math method
@@ -46,3 +46,14 @@ console.log(largestNum(10,5,2))
 //pull request is to help merge and shows you if branch even can be
 //git checkout main returns you back to the main branch and all files in other branches are not visible
 //a string requires string tags "", do not forget this
+
+//warm up Thursday 19th
+let num = 100
+
+while (num > 0) {
+    console.log((num));
+    num-= 5
+    if (num % 2 === 0);
+    console.log(num + " Even")
+    }
+
