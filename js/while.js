@@ -35,7 +35,7 @@ while(num <=32768) {
 
     // This expression will generate a random number between 1 and 5
 
-    Math.floor(Math.random() * 5) + 1;
+/*    Math.floor(Math.random() * 5) + 1;
 let conesBought = 25
 let allCones = 100
 
@@ -47,7 +47,7 @@ do {
             console.log(`Sorry, I cannot sell ${conesBought} cones, I only have ${allCones} left`)
         }
     }
-} while (  allCones - 25)
+} while (  allCones - 25)*/
 
 
 //---------Faruuk's walkthrough
@@ -61,9 +61,16 @@ do {
     console.log(allCones)
     if (soldCones <=allCones) {
         console.log(`${soldCones} cones sold...`)
-        allCones -= soldCones
+        // allCones -= soldCones;
+        allCones = allCones - soldCones;
     } else {
         console.log(`Cannot sell you ${soldCones} cones. I only have ${allCones}`)
     }
 } while (allCones !== 0)
 console.log("Yay! I sold them all!")
+
+// console.log("---")
+// console.log(soldCones);
+
+let numb = '234.00';
+console.log(parseFloat("40"));
