@@ -48,16 +48,16 @@
 //a string requires string tags "", do not forget this
 
 //warm up Thursday 19th
-let num = 100
-
-while (num > 0) {
-    num-= 5
-    if (num % 2 === 0 && num !== 0) {
-    console.log(num + " Even")
-    } else {
-        console.log(num)
-    }
-}
+// let num = 100
+//
+// while (num > 0) {
+//     num-= 5
+//     if (num % 2 === 0 && num !== 0) {
+//     console.log(num + " Even")
+//     } else {
+//         console.log(num)
+//     }
+// }
 //&& allows multiple equations to run within parenthesis, also check if ; is or isn't needed first before changing too much
 // while (num > 0) {
 //     console.log((num));
@@ -65,3 +65,29 @@ while (num > 0) {
 //     if (num % 2 === 0);
 //     console.log(num + " Even")
 // }
+
+
+//Warm up Friday 20th
+
+//in your warmup.js create a function that uses a for loop that returns all the even numbers between 1 and 100. Console log your function.
+
+function allEvenNumbers() {
+    for (let i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+            console.log(i)
+        }
+    }
+}
+allEvenNumbers();
+
+//=====
+// function returnEvenNums(){
+//if you call the function at the end, the parameters that are called must match, ie. empty for empty, parameter with an argument
+//     for(let i =1; i <= 100; i++){
+//
+//         if(i % 2 === 0){
+//             console.log(i);
+//         }
+//     }
+// }
+// returnEvenNums();
