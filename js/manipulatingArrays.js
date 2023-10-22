@@ -71,3 +71,14 @@ let numberSort = [5,4,7,8,1]
 numberSort.sort().reverse();
 console.log(numberSort)
 
+let namesString = "Joe, Bob, Sally";
+
+console.log(namesString);
+const namesArray = namesString.split(",")
+console.log(namesArray);
+
+
+
+console.log(namesArray);
+namesString = namesArray.join(',');
+console.log(namesString);
