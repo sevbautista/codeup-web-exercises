@@ -91,3 +91,18 @@ allEvenNumbers();
 //     }
 // }
 // returnEvenNums();
+
+// Monday 23rd Warmup
+// In your warmup.js create an array of at least 5 of your favorite movies. Create a for each (or a for of loop) to console log all of your movies in alphabetical order
+
+let favoriteMovies =['Interstellar', 'Pandorum', 'Mandy', 'Mad Max: Fury Road', 'Edge of Tomorrow'];
+//const and let are interchangeable here because...? we are not reusing the string name, just rearranging the contents
+favoriteMovies.sort();
+//i forgot the parenthesis to execute the Method.
+console.log(favoriteMovies)
+favoriteMovies.forEach(movie => console.log(`One of my favorite movies is ${movie}`));
+
+
+for (let movie of favoriteMovies) {
+    console.log(movie)
+}
