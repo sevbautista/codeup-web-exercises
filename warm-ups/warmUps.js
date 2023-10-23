@@ -106,3 +106,6 @@ favoriteMovies.forEach(movie => console.log(`One of my favorite movies is ${movi
 for (let movie of favoriteMovies) {
     console.log(movie)
 }
+//
+
+
