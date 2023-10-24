@@ -108,4 +108,41 @@ for (let movie of favoriteMovies) {
 }
 //
 
+//Tuesday 24th Warm up
 
+// in your warmup.js create an array of car objects. Each object should have 3 properties: make, model, and color. rite a for each or for of loop to log each car's make, model and color.
+
+const cars = [
+    {
+        make:"Honda",
+        model: "Accord",
+        color: "Blue",
+    },
+//this whole section is considered "car" when you break it down with the dot (car.make, car.model, car.color)
+
+{
+        make:"Toyota",
+        model: "Matrix",
+        color: "Black",
+},
+    {
+        make:"Chrysler",
+        model: "200",
+        color: "White",
+    }
+];
+
+cars.forEach( car => console.log(`This is a ${car.color} ${car.make} ${car.model} `));
+//Call the element(car) in the console, not the function itself (cars)
+
+//for of:
+
+let carss = [
+    {make:"dodge", model: "challenger", color:"blue"},
+    {make:"ferrari", model:"la ferrari", color:"red"},
+    {make:"acura", model:"nsx", color:"black"}
+    //this is one possible format for a "for of" method
+]
+for (let car of carss) {
+    console.log(`Here is an awesome ${car.color} ${car.make} ${car.model}`)
+}

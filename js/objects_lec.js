@@ -2,7 +2,7 @@
 
 //objects
 
-//object - a groupoing of data and functionality
+//object - a grouping of data and functionality
 //properties - data items contained in an object
 // methods - functions on an object
 
