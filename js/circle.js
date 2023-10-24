@@ -44,45 +44,45 @@
 
 
 
-    let circle = {
-        radius: 3,
-
-        getArea: function () {
-            let area = Math.PI * Math.pow(this.radius, 2);
-           // return Math.PI * this.radius*2; //commenting out what I put originally that isn't working
-            return area;
+    // let circle = {
+    //     radius: 3,
+    //
+    //     getArea: function () {
+    //         let area = Math.PI * Math.pow(this.radius, 2);
+    //        // return Math.PI * this.radius*2; //commenting out what I put originally that isn't working
+    //         return area;
             // console.log(getArea); //returning the area eliminates needing to console log it...?
             //another way would be return Math.PI* Math.pow(circle.radius, 2); or (circle.radius * circle.radius)
 
 
-        },
+//        },
         // getArea: function () {
         //     let area = Math.PI * Math.pow(this.radius, 2);
         //     return area;
         // }
-
-        logInfo: function (doRounding) {
-            if (doRounding) {
-
-            console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
-            // console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
-            //if dorounding is true round the result to the nearest integer
-                } else {
-                console.log("Area of a circle with radius: " + this.radius + ", is: " + (circle.getArea);
-                //review how this applies to the rest of the function above and below
-
-            }
-    };
-
-    console.log("Raw circle information");
-    circle.logInfo(false);
-    console.log("Circle information rounded to the nearest whole number");
-    circle.logInfo(true);
-
-    console.log("=======================================================");
-
-    console.log("Raw circle information");
-    circle.logInfo(false);
-    console.log("Circle information rounded to the nearest whole number");
-    circle.logInfo(true);
+    //
+    //     logInfo: function (doRounding) {
+    //         if (doRounding) {
+    //
+    //         console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
+    //         // console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
+    //         //if dorounding is true round the result to the nearest integer
+    //             } else {
+    //             console.log("Area of a circle with radius: " + this.radius + ", is: " + (circle.getArea);
+    //             //review how this applies to the rest of the function above and below
+    //
+    //         }
+    // };
+    //
+    // console.log("Raw circle information");
+    // circle.logInfo(false);
+    // console.log("Circle information rounded to the nearest whole number");
+    // circle.logInfo(true);
+    //
+    // console.log("=======================================================");
+    //
+    // console.log("Raw circle information");
+    // circle.logInfo(false);
+    // console.log("Circle information rounded to the nearest whole number");
+    // circle.logInfo(true);
 })();
