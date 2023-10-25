@@ -2,9 +2,10 @@
 
 // ===== Exercise 2.
 function showMultiplicationTable(num) {
-    for(let i = 1; i <= 10; i++)
+    for (let i = 1; i <= 10; i++)
         console.log(num * i)
 }
+
 showMultiplicationTable(7)
 
 
@@ -71,17 +72,24 @@ showMultiplicationTable(7)
 // 24 is even
 // 199 is odd
 
+// for (let i = Math.floor(Math.random() * 200) + 20; ;)
+// // this is establishing the random number max and minimum values to select from
+//     if (i % 2 === 0) ;
+// // using the modulus to find all the even integers
+// console.log (i, " is even")
 
-// for (let i = Math.floor(Math.random() * 200) + 20;;
-//     if (i % 2 === 0);
-//     console.log (i, " is even")
-// }
-// for (let i = 1; i <= 5; i++) {
-//     if (i === 3) {
-//     }
-//     console.log()
-// }
-//     if (num % 2 === 0);
+}
+
+for (let i = Math.floor(Math.random() * 200) + 20;;
+    if (i % 2 === 0);
+    console.log (i, " is even")
+}
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+    }
+    console.log()
+}
+    if (num % 2 === 0);
 
 
 // Faruuk's walkthrough

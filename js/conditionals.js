@@ -22,17 +22,18 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(input) {
-    if (input === "red") {
+function analyzeColor(color) {
+    if (color === "red") {
         return "This is the best color!";
-    } else {
-        // else if (color === "blue"){
-        // return "blue is blue!";
-    //} else if (color === "cyan") {
-        // return "cyan is neat";
-        //else {
-        // return "I don't know anything about" + color
-        return "Don't like this color.";
+    } else if (color === "blue"){
+        //     had an extra else if here that wasn't doing anything and had to correct syntax
+        return "blue is blue!";
+    } else if (color === "cyan") {
+        return "cyan is neat";
+    }
+    //I missed a closing bracket here that I have added
+    else {
+        return "Don't like this." + color
     }
 }
 
@@ -45,39 +46,39 @@ console.log(analyzeColor("red"))
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-// const randomColor = colors[Math.floor(Math.random() * colors.length)];
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
-// console.log(analyzeColor(randomColor))
+console.log(analyzeColor(randomColor))
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor(color) {
-    switch (color) {
-        case 'red':
-            return "Bad color!"
-        case 'orange':
-            return "What a great color!"
-        case 'yellow':
-            return "Bad color!"
-        case 'green':
-            return "What a great color!"
-        case 'blue':
-            return "Bad color!"
-        case 'indigo':
-            return "What a great color!"
-        case 'violet':
-            return "Bad color!"
-
-    }
-}
+// function analyzeColor(color) {
+//     switch (color) {
+//         case 'red':
+//             return "Bad color!"
+//         case 'orange':
+//             return "What a great color!"
+//         case 'yellow':
+//             return "Bad color!"
+//         case 'green':
+//             return "What a great color!"
+//         case 'blue':
+//             return "Bad color!"
+//         case 'indigo':
+//             return "What a great color!"
+//         case 'violet':
+//             return "Bad color!"
+//
+//     }
+// }
 //Review switch statements and their use
 // function analyzeColor(color) {
 //     switch(color){
@@ -130,27 +131,24 @@ alert(analyzeColor(userInput1))
  * return value.
  */
 // function calculateTotal(luckyNumber, totalAmount) {
-//     if (luckyNumber === 5 && discountPercent === 100)
-//         if (luckyNumber === 4 && discountPercent === 50)
-//             if (luckyNumber === 3 && discountPercent === 35)
-//                 if (luckyNumber === 2 && discountPercent === 25)
-//                     if (luckyNumber === 1 && discountPercent === 10)
-//                         if (luckyNumber === 0 && discountPercent === 0)
-//
-//                             return (`totalAmount - (total amount * (${discountPercent}/100))`)
+//     if(luckyNumber === 0) {
+//         return totalAmount;
+//     } else if (luckyNumber === 1) {
+//         return totalAmount - (0.10 * totalAmount);
+//     } else if (luckyNumber === 2) {
+//         return totalAmount - (0.25 * totalAmount);
+//     } else if (luckyNumber === 3) {
+//         return totalAmount - (0.35 * totalAmount)
+//     } else if (luckyNumber === 4) {
+//         return totalAmount - (0.50 * totalAmount)
+//     } else if (luckyNumber === 5) {
+//         return totalAmount -  totalAmount
+//     } else {
+//         return "Invalid lucky number. Please enter a lucky number between 0 and 5"
+//     }
 // }
-//     function calculateTotal(luckyNumber, totalAmount) {
-//
-// return (`totalAmount - (total amount * (${discountPercent}/100))`)
-//
-// //50 - (50 (*10/100 ))=
-//
-// }
-// console.log(calculateTotal(5, 50)
 
-//50 - (50 (*10/100 ))=
-
-// }
+// ===================================
 // function calculateTotal(luckyNumber, totalAmount) {
 //     let discountPercent =35;
 //         return (`${totalAmount} - (${totalAmount} * (${discountPercent}/100))`)
@@ -230,43 +228,49 @@ const luckyNumber = Math.floor(Math.random() * 6);
 //make sure your operators are being used correctly
 // zero, 0 is neither even nor odd
 //breaking it down into separate functions
-// let userConfirm = confirm("Would you like to enter a number?")
-//
-// if(userConfirm) {
-//     let userInput = parseFloat(prompt("Enter any number"));
-//     if(isNaN(userInput)) {
-//         alert("You didn't input a number");
-//     }else {
-//         alert(isEvenOdd(userInput))
-//         alert(addOneHundred(userInput))
-//         alert(posNeg(userInput))
-//     }
-// }
-//
-// // Even or Odd function
-// function isEvenOdd(num) {
-//     if(num === 0){
-//         return `${num} is neither odd or even`
-//     } else if(num % 2 === 0) {
-//         return `${num} is an even number!`
-//     } else if (num % 2 ===1){
-//         return `${num} is an odd number!`
-//     }
-// }
-//
-// // add 100 function
-// function addOneHundred(num) {
-//     return `${num} + 100 is ${num + 100}`
-// }
-//
-// // pos or neg function
-// function posNeg(num){
-//     if(num > 0) {
-//         return`${num} is a positive number`
-//     }else if (num < 0) {
-//         return `${num} is a negative number`
-//     }else {
-//         return `${num} is nor positive or negative`
-//     }
-// }
-//review the above
+
+let userConfirm = confirm("Would you like to enter a number?")
+
+if(userConfirm) {
+    let userInput = parseFloat(prompt("Enter any number"));
+    if(isNaN(userInput)) {
+        alert("You didn't input a number");
+    }else {
+        alert(isEvenOdd(userInput))
+        alert(addOneHundred(userInput))
+        alert(posNeg(userInput))
+    }
+}
+
+
+// Even or Odd function
+function isEvenOdd(num) {
+    if(num === 0){
+        return `${num} is neither odd or even`
+    } else if(num % 2 === 0) {
+        return `${num} is an even number!`
+    } else if (num % 2 ===1){
+        return `${num} is an odd number!`
+    }
+}
+//modulus allows us to determine whether a parameter is positive or negative when put in like this (num % 2 === 0) or (num % 2 === 1)
+
+// add 100 function
+function addOneHundred(num) {
+    return `${num} + 100 is ${num + 100}`
+}
+//adding 100 to our input value and returning that displayed
+
+// pos or neg function
+function posNeg(num){
+    if(num > 0) {
+        return`${num} is a positive number`
+    }else if (num < 0) {
+        return `${num} is a negative number`
+    }else {
+        return `${num} is nor positive or negative`
+    }
+}
+//here we are returning the state of the number, whether it is positive or negative
+// only two if/else if conditions, the remaining else covers all other conditions
+
