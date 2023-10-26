@@ -7,5 +7,7 @@
 <body>
 <script src="">
 </script> <p>Hello World!</p>
+<p>I think my ideal web dev job would be working for myself, probably doing something like creating mobile apps. I've a few ideas of things I'd like to see and I think being able make those happen instead of always saying "Man, it would be cool if someone made a [blank] app" would be great. I'm not adverse to the idea of working in a company or alongside others in a team or so, but the idea of being able to guide my own direction sounds nice, and ultimately I'd like to take what I learn here and apply it towards something like that.</p>
+<p>I'm not entirely sure at this point what all that would entail, I've worked in such a wide range of jobs and environments and the ones that offered me the most opportunity for self-sufficiency stood out to me the most and, though it was the most daunting, it felt good none the less to be able to experience that kind of control over the work.</p>
 </body>
 </html>
