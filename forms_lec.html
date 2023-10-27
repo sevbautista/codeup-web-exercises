@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms Lecture</title>
+</head>
+<body>
+<!--Form Tags-->
+<!--Container to hold forms-->
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <!--if you need more key value pairs, separate them with an ampersand-->
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="username" value="rooks4507">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="password">
+    <br>
+
+    <label for="txtarea">Text Area </label>
+    <textarea id="txtarea" name="comment"></textarea>
+    <br>
+    <input type="submit">
+    <button type="submit">Enter</button>
+    <br>
+    <label for="check">Check Box</label>
+    <input id="check" name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+    <br>
+
+    <p>Test Question</p>
+    A <input type="radio" name="quiz_question_1" value="a"><br>
+    B <input type="radio" name="quiz_question_1" value="b" disabled><br>
+    C <input type="radio" name="quiz_question_1" value="c" checked><br>
+    <!--    "checked" attribute will make it on the form be pre-checked-->
+    D <input type="radio" name="quiz_question_1" value="d"><br>
+    <!--separate questions are separated by their own form, to get a new question with unique responses, you need it's own <form> section-->
+
+<br>
+
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark" selected>Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+
+<br>
+
+    <input type="hidden" name="user_id" value="432">
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <!--if you need more key value pairs, separate them with an ampersand-->
+    <label for="email">Email</label>
+    <br>
+    <input id="email" name="Email" type="text" placeholder="email">
+    <br>
+
+    <label for="password">Password</label>
+    <br>
+
+    <input id="password" name="password" type="password" placeholder="password">
+    <br>
+    <label for="txtarea">Bio </label><br>
+    <textarea id="txtarea" name="comment"></textarea>
+    <br>
+
+    <br>
+    <h4>How did you hear about us?</h4>
+
+    <label for="billboard">
+        <input id=billboard type="radio" name="hear" value="billboard"> Billboard</label>
+    <br>
+    <label for="radio">
+        <input id="radio" type="radio" name="hear" value="radio advertisements"> Radio Advertisements</label>
+    <br>
+    <label for="internet"> <input id=internet type="radio" name="hear" value="internet advertisement"> Internet
+        Advertisements</label>
+    <br>
+    <label for="Other"> <input id=other type="radio" name="hear" value="other"> Other</label>
+    <br>
+    <br>
+    <label for="browser_preference">What web browser are you using?</label>
+    <select name="Browser Preference" id="browser_preference">
+        <option value="Chrome">Chrome</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Safari">Safari</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit">
+</form>
+<br>
+</body>
+</html>
