@@ -1,3 +1,16 @@
+"use strict"
+
+function isNegative(number) {
+    return number < 0;
+}
+
+// Example usage:
+console.log(isNegative(-5)); // Out
+// ==
+
+function isTen(number) {
+    return number === 10;
+
 function capitalizeName(fullName) {
     const names = fullName.split(' ');
     if (names.length !== 2) {
@@ -9,5 +22,4 @@ function capitalizeName(fullName) {
     const capitalizedName = `${firstName} ${lastName}`;
 
     return capitalizedName;
-}
-g
+}}
