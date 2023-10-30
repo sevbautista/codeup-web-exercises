@@ -10,40 +10,37 @@
 <body>
 <form method="POST" action="https://request-inspector.glitch.me/">
     <!--if you need more key value pairs, separate them with an ampersand-->
-    <label for="email">Email</label>
-    <br>
-    <input id="email" name="Email" type="text" placeholder="email">
-    <br>
-
-    <label for="password">Password</label>
+    <label for="email">Email</label><br>
+    <input id="email" name="Email" type="text" placeholder="user@email.com">
+<!--    placeholder is good to put what is expected in that spot-->
     <br>
 
+    <label for="password">Password</label><br>
     <input id="password" name="password" type="password" placeholder="password">
     <br>
-    <label for="txtarea">Bio </label><br>
-    <textarea id="txtarea" name="comment"></textarea>
+
+    <label for="textarea">Bio </label><br>
+    <textarea id="textarea" name="comment" placeholder="Enter your bio"></textarea>
     <br>
 
     <br>
-    <h4>How did you hear about us?</h4>
+    <h3>How did you hear about us?</h3>
 
     <label for="billboard">
-        <input id=billboard type="radio" name="hear" value="billboard"> Billboard</label>
-    <br>
+        <input id=billboard type="radio" name="hear" value="billboard"> Billboard</label><br>
     <label for="radio">
-        <input id="radio" type="radio" name="hear" value="radio advertisements"> Radio Advertisements</label>
+        <input id="radio" type="radio" name="hear" value="radio advertisements"> Radio Advertisements</label><br>
+    <label for="internet">
+        <input id=internet type="radio" name="heard" value="internet advertisement"> Internet Advertisements</label><br>
+    <label for="Other">
+        <input id=other type="radio" name="heard" value="other"> Other</label><br>
     <br>
-    <label for="internet"> <input id=internet type="radio" name="hear" value="internet advertisement"> Internet
-        Advertisements</label>
-    <br>
-    <label for="Other"> <input id=other type="radio" name="hear" value="other"> Other</label>
-    <br>
-    <br>
-    <label for="browser_preference">What web browser are you using?</label>
-    <select name="Browser Preference" id="browser_preference">
-        <option value="Chrome">Chrome</option>
-        <option value="Firefox">Firefox</option>
-        <option value="Safari">Safari</option>
+    <label for="browser_preference"><h3>What web browser are you using?</h3></label>
+    <select name="browser preference" id="browser_preference">
+        <option value="chrome" id="google chrome" name="chrome">Chrome</option>
+        <option value="firefox" id="firefox" name="firefox">Firefox</option>
+        <option value="safari" id="safari" name="safari">Safari</option>
+<!--        lowercase in code unless necessary-->
     </select>
     <br>
     <br>
