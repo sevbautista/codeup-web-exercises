@@ -2,3 +2,42 @@
     color: rebeccapurple;
     text-decoration: underline;
 }
+
+h1 {
+    text-align: center;
+}
+h2 {
+    color: darkorange;
+    text-decoration: underline;
+}
+
+html {
+    background-color: dimgrey;
+    background-image: url("../img/dogface.jpg");
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-blend-mode: color-dodge;
+    font-family: sans-serif;
+}
+
+table, tr, td {
+    font-family: "Comic Sans MS", serif;
+    padding: 5px
+}
+
+}
+
+a:link {
+    color:red;
+}
+a:visited {
+    color: black
+}
+a:hover {
+    color: blue;
+    font-size: 25px
+}
+a:active{
+    color:green;
+}
