@@ -19,13 +19,20 @@ html {
     background-position: initial;
     background-blend-mode: color-dodge;
     font-family: sans-serif;
+    /*transform: scale(-1, 1);*/
+}
+ {
+    transform: scale(1, -1);
+}
+table {
+    font-size: 20px;
+    width: 100%;
 }
 
-table, tr, td {
+tr, td {
     font-family: "Comic Sans MS", serif;
-    padding: 5px
-}
-
+    padding: 5px;
+    text-align: center;
 }
 
 a:link {
@@ -33,6 +40,7 @@ a:link {
 }
 a:visited {
     color: black
+
 }
 a:hover {
     color: blue;
@@ -40,4 +48,8 @@ a:hover {
 }
 a:active{
     color:green;
+}
+
+ol, ul {
+    list-style: georgian ;
 }
