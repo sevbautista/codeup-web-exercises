@@ -4,7 +4,14 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
-
+    --bg-info: #CDDEFF;
+    --text-info: #4943A0;
+    --bg-success: #CFF3DA ;
+    --text-success: #368553;
+    --bg-warning: #F0ECB5;
+    --text-warning: #99872E;
+    --bg-error: #FAD2D6;
+    --text-error: #8A223A;
 }
 
 .message {
@@ -19,25 +26,24 @@ body, html {
 }
 
 .message-info {
-    background-color: #CDDEFF;
-    color: #4943A0;
+    color: var(--text-info);
+    background-color: var(--bg-info);
 }
 
 .message-success {
-    background-color: #CFF3DA ;
-    color: #368553;
+    color: var(--text-success);
+    background-color: var(--bg-success);
 
 }
 
 .message-warning {
-    background-color: #F0ECB5;
-    color: #99872E;
+    color: var(--text-warning);
+    background-color: var(--bg-warning);
 
 }
 
 .message-error{
-    background-color: #FAD2D6;
-    color: #8A223A;
-
+    color: var(--text-error);
+    background-color: var(--bg-error);
 
 }
