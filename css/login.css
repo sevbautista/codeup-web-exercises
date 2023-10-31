@@ -11,22 +11,25 @@ body, html {
 }
 
 form {
-    margin: 1em 1em 1em 1em;
-    padding: 1em 1em 1em 1em;
+    margin: 1em;
+    padding: 1em;
+/*    I had 1em for each side*/
 }
 
 fieldset {
     -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
     border: 0;
+    /*can also put none*/
     background-color: white;
 }
 
 .width-80 {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    /*review auto some more, i put just auto, but 0 auto produced same result*/
     /* The element with this class should be 80% of the width and it must be centered */
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
 }
@@ -54,8 +57,9 @@ fieldset {
     padding: 8px;
     color: white;
     font-weight: bold;
-    border-width: 1px;
-    border-color: lightgrey;
+    border: 1px solid lightgrey;
+    /*border-width: 1px*/
+    /*border-color: lightgrey;*/
     /* There must be a separation of 8px between the text and the border of this element */
     /* The text color of this element should be white and bold */
     /* The border of this element should be 1px, and its color should be light grey */
@@ -63,8 +67,9 @@ fieldset {
 }
 
 .form-control {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    /*padding-top: 4px;*/
+    /*padding-bottom: 0;*/
+    padding: 4px 0;
     text-indent: 10px;
     /* There must be 4px on top of the text and below the text of an input with this class */
     /* It should have a separation of .5em from elements on top of it and below it */

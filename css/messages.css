@@ -4,7 +4,20 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
-    --bg-info: #CDDEFF;
+/*    --bg-info: #CDDEFF;*/
+/*    --text-info: #4943A0;*/
+/*    --bg-success: #CFF3DA ;*/
+/*    --text-success: #368553;*/
+/*    --bg-warning: #F0ECB5;*/
+/*    --text-warning: #99872E;*/
+/*    --bg-error: #FAD2D6;*/
+/*    --text-error: #8A223A;*/
+}
+
+/*!*farrukh's version of doing the variables*/
+
+    :root {
+   --bg-info: #CDDEFF;
     --text-info: #4943A0;
     --bg-success: #CFF3DA ;
     --text-success: #368553;
@@ -12,10 +25,9 @@ body, html {
     --text-warning: #99872E;
     --bg-error: #FAD2D6;
     --text-error: #8A223A;
-}
+    }
 
 .message {
-    
     margin-bottom: 9px;
     text-align: left;
     font-weight: lighter;
@@ -23,6 +35,12 @@ body, html {
     border: 1px solid grey;
     border-radius: 3px;
     padding: 9px;
+/*    farrukh did the following:
+    margin: 8px;
+    border: 2px solid lightgrey;
+    border-radius:8px;
+    padding: .5em;
+*/
 }
 
 .message-info {
@@ -33,17 +51,14 @@ body, html {
 .message-success {
     color: var(--text-success);
     background-color: var(--bg-success);
-
 }
 
 .message-warning {
     color: var(--text-warning);
     background-color: var(--bg-warning);
-
 }
 
 .message-error{
     color: var(--text-error);
     background-color: var(--bg-error);
-
 }
