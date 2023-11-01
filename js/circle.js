@@ -66,7 +66,7 @@
     //
     //         console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
     //         // console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(circle.getArea);
-    //         //if dorounding is true round the result to the nearest integer
+    //         //if do rounding is true round the result to the nearest integer
     //             } else {
     //             console.log("Area of a circle with radius: " + this.radius + ", is: " + (circle.getArea);
     //             //review how this applies to the rest of the function above and below
