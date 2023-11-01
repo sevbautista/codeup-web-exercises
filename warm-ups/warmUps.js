@@ -78,6 +78,7 @@ function allEvenNumbers() {
         }
     }
 }
+
 allEvenNumbers();
 
 //=====
@@ -95,7 +96,7 @@ allEvenNumbers();
 // Monday 23rd Warmup
 // In your warmup.js create an array of at least 5 of your favorite movies. Create a for each (or a for of loop) to console log all of your movies in alphabetical order
 
-let favoriteMovies =['Interstellar', 'Pandorum', 'Mandy', 'Mad Max: Fury Road', 'Edge of Tomorrow'];
+let favoriteMovies = ['Interstellar', 'Pandorum', 'Mandy', 'Mad Max: Fury Road', 'Edge of Tomorrow'];
 //const and let are interchangeable here because...? we are not reusing the string name, just rearranging the contents
 favoriteMovies.sort();
 //i forgot the parenthesis to execute the Method.
@@ -114,35 +115,126 @@ for (let movie of favoriteMovies) {
 
 const cars = [
     {
-        make:"Honda",
+        make: "Honda",
         model: "Accord",
         color: "Blue",
     },
 //this whole section is considered "car" when you break it down with the dot (car.make, car.model, car.color)
 
-{
-        make:"Toyota",
+    {
+        make: "Toyota",
         model: "Matrix",
         color: "Black",
-},
+    },
     {
-        make:"Chrysler",
+        make: "Chrysler",
         model: "200",
         color: "White",
     }
 ];
 
-cars.forEach( car => console.log(`This is a ${car.color} ${car.make} ${car.model} `));
+cars.forEach(car => console.log(`This is a ${car.color} ${car.make} ${car.model} `));
 //Call the element(car) in the console, not the function itself (cars)
 
 //for of:
 
 let carss = [
-    {make:"dodge", model: "challenger", color:"blue"},
-    {make:"ferrari", model:"la ferrari", color:"red"},
-    {make:"acura", model:"nsx", color:"black"}
+    {make: "dodge", model: "challenger", color: "blue"},
+    {make: "ferrari", model: "la ferrari", color: "red"},
+    {make: "acura", model: "nsx", color: "black"}
     //this is one possible format for a "for of" method
 ]
 for (let car of carss) {
     console.log(`Here is an awesome ${car.color} ${car.make} ${car.model}`)
 }
+
+//November 1
+
+// Objective: Create a function that takes in an array and returns an array of the names of people who know JavaScript.
+
+// Data Structure/Example Input:
+
+let developers = [
+    {
+        name: "Jonathan",
+        languages: {
+            frontend: ["HTML", "JavaScript", "CSS"],
+            backend: ["Java"]
+        }
+    },
+    {
+        name: "Bonnie",
+        languages: {
+            frontend: ["JavaScript"],
+            backend: []
+        }
+    },
+    {
+        name: "Raj",
+        languages: {
+            frontend: [],
+            backend: ["C#", "Java", "Python"]
+        }
+    },
+    {
+        name: "Carmen",
+        languages: {
+            frontend: ["JavaScript", "HTML", "CSS", "React"],
+            backend: ["C#", "Java", "Python", "TypeScript"]
+        }
+    },
+]
+
+// function knowJava(arr){
+//     for (let i = 0; i < developers.length; i++) {
+//         let lang = ("Javascript").split;{
+//         if (developers.indexOf(lang[i] -= 1)){
+//             return arr
+//         }
+//     }
+// }}
+// console.log(knowJava("Javascript"))
+
+// function knowsJavaScript(developer) {
+//     for (let i = 0; i < developers.length; i++) {
+//         return
+//     }
+// }
+//go over "map" and "filter" method to understand it better
+
+//go over the "includes" method for finding elements of an object
+
+
+// This was Johnny's Method
+// function devsWhoKnowJs(arrOfDevs) {
+//     let jsDevsArr = [];
+//     arrOfDevs.forEach((dev) => {
+//         if (dev.languages.frontend.includes("javascript")) {
+//             jsDevsArr.push(dev.name);
+//         } else {
+//             return `No devs with JS skills`;
+//         }
+//     })
+//     return jsDevsArr;
+//
+// }
+
+// console.log(devsWhoKnowJs(developers));
+
+//Jays method
+const knowsJavaScript = (arr) => {
+    let javaScriptDevs = [];
+    for (let i = 0; i < arr.length; i++) {
+        // console.log(arr[i])
+        // i is iterating through developers
+        for (let j = 0; j < arr[i].languages.frontend.length; j++) {
+            // console.log(arr[i].languages.frontend[j])
+            //         j is iterating through frontend
+            if (arr[i].languages.frontend[j] === "JavaScript") {
+                javaScriptDevs.push(arr[i].name)
+            }
+        }
+    }
+    return javaScriptDevs;
+}
+console.log(knowsJavaScript(developers));
