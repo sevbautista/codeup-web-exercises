@@ -309,3 +309,6 @@ let elements = [
 //     return arrOfElements
 // }
 // console.log(changeNow(elements, 'red', 'blue'));
+
+
+
