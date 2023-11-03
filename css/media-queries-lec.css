@@ -1,0 +1,23 @@
+@media screen and (min-width: 500px) {
+    main {
+        background-color: #0077b6;
+        display: flex; /*default property of flex display is row*/
+        justify-content: space-evenly;
+        /*flex-direction: column;*/
+    }
+}
+
+/*will define a range for screen between 900 and 1200 ( this will take precedence over more ambiguous media queries*/
+@media screen and (min-width: 900px) and (max-width: 1200px){
+    main{
+        background-color: yellow;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    main {
+        background-color: green;
+        display:flex;
+        /*flex-direction: column;*/
+    }
+}
