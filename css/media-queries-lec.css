@@ -13,7 +13,7 @@
         background-color: yellow;
     }
 }
-
+@media s
 @media screen and (max-width: 499px) {
     main {
         background-color: green;

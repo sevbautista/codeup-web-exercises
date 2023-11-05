@@ -23,3 +23,47 @@ function capitalizeName(fullName) {
     //
     // return capitalizedName;
 }}
+
+function issNegative(num) {
+    return num < 0;
+}
+
+
+//1 isTrue
+
+function isTrue(num){
+    return num === true;
+}
+
+// 2 isFalse
+function isFalse(num) {
+    return num === false;
+}
+
+//3 not
+function not(num){
+    return !num;
+}
+
+//4 addOne
+
+function addOne(num) {
+    return ++num;
+}
+
+// 5 isEven
+function isEven(num) {
+    return (num % 2 === 0);
+}
+
+//6 isIdentical
+
+function isIdentical(num1, num2) {
+    return num1 === num2;
+}
+
+//7 visEqual
+
+function isEqual(num1, num2) {
+    return (typeOf num1 == num2);
+}
