@@ -24,46 +24,53 @@ function capitalizeName(fullName) {
     // return capitalizedName;
 }}
 
-function issNegative(num) {
-    return num < 0;
+// 1. isTrue
+function isTrue(input) {
+    return input === true;
 }
 
+// 2. isFalse
+function isFalse(input) {
+    return input === false;
 
-//1 isTrue
-
-function isTrue(num){
-    return num === true;
 }
 
-// 2 isFalse
-function isFalse(num) {
-    return num === false;
+// 3. not
+function not(input) {
+    return !input;
 }
 
-//3 not
-function not(num){
-    return !num;
+// 4. addOne
+function addOne(input) {
+    return ++input;
 }
 
-//4 addOne
-
-function addOne(num) {
-    return ++num;
+// 5. isEven
+function isEven(input) {
+    return (input % 2 === 0);
 }
 
-// 5 isEven
-function isEven(num) {
-    return (num % 2 === 0);
-}
-
-//6 isIdentical
-
+// 6. isIdentical
 function isIdentical(num1, num2) {
     return num1 === num2;
 }
 
-//7 visEqual
-
+// 7. isEqual
 function isEqual(num1, num2) {
-    return (typeOf num1 == num2);
+    return num1 == num2;
+}
+
+// 8. or
+function or(num1, num2){
+    return num1 || num2;
+}
+
+// 9. and
+function and(num1, num2){
+    return num1 && num2;
+}
+
+// 10. concat
+function concat(input1, input2) {
+    return String(input1) + String(input2);
 }
