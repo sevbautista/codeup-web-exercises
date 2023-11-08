@@ -1,0 +1,25 @@
+.contact {
+    text-align: center;
+
+}
+body {
+    font-family: Copperplate, sans-serif;
+}
+#divider {
+    width: 100%;
+    background-color: palevioletred;
+    height: 10px;
+}
+.pagehead {
+    text-align: center;
+}
+
+h4 {
+    color: steelblue;
+}
+.row {
+    padding: 12px;
+}
+li {
+    padding-bottom: -100px;
+}

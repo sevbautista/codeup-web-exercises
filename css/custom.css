@@ -43,6 +43,9 @@ h2 {
     padding-top: 3px;
 }
 
+.list-group-item {
+    padding: 3px;
+}
 ul {
     display: contents;
     list-style-type: none;
