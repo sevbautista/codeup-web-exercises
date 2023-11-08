@@ -1,0 +1,60 @@
+/** {*/
+/*    display: flex;*/
+/*}*/
+.background-pizza {
+    background-size: cover;
+    background-position: bottom;
+    z-index: -1;
+}
+.jumbotron {
+    display: flex;
+    justify-content: center;
+}
+.p-3 {
+    font-size: xxx-large;
+    opacity: 85%;
+    text-align: center;
+    position: relative;
+    top: -13rem!important;
+}
+h2 {
+    top: 500px;
+    left: 35px;
+    position: absolute;
+    display: block;
+}
+.nav-tabs{
+     position: absolute;
+    left: 35px;
+    top: 550px;
+}
+#myTabContent{
+    position: absolute;
+    left: 53px;
+    top: 612px;
+    width: 1360px;
+    /*background-color: #0e6dfd;*/
+    color: white;
+    border-radius: 2px;
+    margin: 17px;
+    border-width: initial;
+    height: 33px;
+    padding-left: 5px;
+    padding-top: 3px;
+}
+
+ul {
+    display: contents;
+    list-style-type: none;
+}
+.btn-outline-success {
+    border-color: #0e6dfd;
+    color: #0e6dfd;
+
+}
+.build-pizza {
+    /*justify-content: right;*/
+}
+.card {
+    width: 85%
+}
