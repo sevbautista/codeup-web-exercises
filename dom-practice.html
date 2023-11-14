@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="container">
+<h1 class="row">DOM PRACTICE</h1>
+<p class="speak">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur, culpa distinctio exercitationem iusto minus nulla perferendis quasi ratione velit! Impedit in natus quia sapiente. Est facere impedit quis voluptas?</p>
+<h4>The sound of a Cat's Footfall</h4>
+<p class="speak speak2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, atque deleniti distinctio dolores ducimus enim est illo iusto officia optio porro, sequi tempore ullam. At ea in quaerat quidem quod.</p>
+<button type="submit">Error</button>
+</div>
+<script>
+    const title = document.getElementById("container")
+    title.setAttribute("style", "color: green");
+    console.log(title)
+    const para = document.getElementsByClassName("speak");
+        for (let i = 0; i < para.length; i++){
+        console.log(para)
+    }
+    // para.setAttribute("class", "lorem");
+    console.log(para[0])
+    // document.getAttribute("class")
+</script>
+</body>
+</html>

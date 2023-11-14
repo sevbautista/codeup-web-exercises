@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attributes and CSS</title>
+    <style>
+        .border {
+            border: 1px solid black;
+            border-radius: 7px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .sans-serif {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+        }
+        .background-color  {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<header class="border text-center sans-serif">
+    <h1>Attributes and CSS in JS</h1>
+
+</header>
+<p id="text">Hello World!</p>
+</p>
+<script>
+
+<!--    using innerHTML-->
+    const header = document.querySelector("header");
+    console.log(header.innerHTML);
+    header.innerHTML = "<h1 id='h1'>The uses of InnerHTML!</h1>" +
+    "<p>You can get and set HTML with innerHTML</p>";
+
+    // Using innerText
+    document.querySelector("h1").innerText = "I control the inner text";
+
+console.log(header.hasAttribute("id"));
+const isThereH1 = document.getElementsByTagName("h1");
+console.log(isThereH1[0].hasAttribute("id"));
+console.log(header.hasAttribute("id"));
+header.setAttribute("id", "pageHeader");
+console.log(header.hasAttribute("id"));
+console.log(header.getAttribute("id"));
+
+
+console.log(header.classList);
+header.classList.add("background-color");
+header.classList.remove("sans-serif");
+header.classList.toggle("background-color");
+
+let textElement = document.getElementById('text');
+
+// Change the color of the text
+textElement.style.color = "red";
+
+// Add a background color
+textElement.style.backgroundColor = "black";
+
+// Change the font-size
+textElement.style.fontSize = "20px";
+
+
+</script>
+</body>
+</html>
