@@ -28,6 +28,11 @@
 <button id="btn2">Second</button>
 <button id="btn3">Third</button>
 <button id="btn4">Fourth</button>
+
+<form>
+    <label for="textField">Type something:</label><br>
+    <input type="text" id="textField" name="textField" placeholder="Type Here">
+</form>
 <script>
     "use strict";
     // // TODO: Uncomment next line and get the main header element by id
@@ -124,7 +129,22 @@
             })
         }
     }
+    // =====================
+    //     document.querySelector('#textField').addEventListener('keydown', () => alert('A key was pushed down!') );
+    //     document.querySelector('#textField').addEventListener('keyup', () => alert('A key was released!') );
 
+    const myKeyPressFunction = event => {
+        console.log(`key pressed: ${event.key}`);
+        console.log(event.target);
+    }
+    document.querySelector("#textField").addEventListener('keypress', myKeyPressFunction);
+    document.querySelector("#textField").addEventListener('keypress', function (event) {
+        console.log(event)
+    });
+
+        document.querySelectorAll(".myBox").forEach( box => {
+            box.addEventListener('mouseenter', ()=> console.log('mouse entered box!'));
+        });
 </script>
 </body>
 </html>
