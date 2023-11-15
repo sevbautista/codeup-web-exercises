@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events</title>
+</head>
+<body>
+<button id="btn1">Click Me!</button>
+<button id="btn2">Remove Event Listener</button>
+
+<script>
+    'use strict';
+
+    // obtain a reference to the target element
+    // const button1 = document.getElementById("btn1");
+
+    // create a handler function
+    const listener = () => alert('You clicked the button!');
+
+    // register the listener to handle clicks on btn1
+    // button1.addEventListener('click', listener);
+
+    // obtain reference to button two
+    const button2 = document.getElementById('btn2');
+
+    // create a function that removes the event listener from button 1
+    const remover = () => {
+        button1.removeEventListener('click', listener);
+        alert('Event listener removed.');
+    }
+
+    // register an event listener on button two
+    button2.addEventListener('click', remover);
+
+    const button1 = document.getElementById("btn1");
+    const listenerE = (event) => {
+        console.log('You clicked the button!');
+        console.log(event.target.innerHTML);
+        console.log(event.target);
+        console.log(event);
+    }
+    button1.addEventListener('click', listenerE);
+
+</script>
+</body>
+</html>

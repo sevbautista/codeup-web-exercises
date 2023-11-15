@@ -25,10 +25,21 @@ let intervalId = setTimeout(function () {
 }, delay);
 
 
+
+
+
+
+
+
 // setInterval(() => newPic.setAttribute("src", "img/dogface.jpg"), delay);
 
 // setInterval(() => newName.innerHTML = "Sammy Bologna", delay * 4);
 
 // setInterval(function () {
 //     newCard.classList.toggle("newColor");
-// }, delay);
+// }, delay*2);
+
+   // setInterval(function () {
+   //      newDesc.style.color = "orange";
+   //      newDesc.style.fontFamily = "Work Sans";
+   //  }, delay * 6);
