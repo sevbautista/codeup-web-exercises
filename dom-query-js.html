@@ -86,7 +86,9 @@ function listener3 () {
     for (let i = 0; i < listItems.length; i++) {
         if ([i] % 2 !== 1) {
             listItems[i].setAttribute("style", "color: grey");
-        listItems[0].setAttribute("style", "color: blue");
+        // listItems[0].setAttribute("style", "color: blue");
+        } if(listItems[i].getAttribute("data-dbid")=== "1"){
+            listItems[i].style.color = "blue";
         }
     }
 }
