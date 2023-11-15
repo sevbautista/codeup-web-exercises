@@ -101,24 +101,29 @@
     //     button4.addEventListener('click', listener4)
 
     // MOUSE EVENTS EXERCISE
+    // 2.
     document.querySelector('#main-header').addEventListener("click", function () {
         this.style.backgroundColor = "orange"
-
+        console.log("clicking h1")
     });
+
+    // 3.
     document.querySelector('p').addEventListener("dblclick", function () {
         this.style.fontSize = "18px"
     });
 
+    // 4.
     const liList = document.querySelectorAll('li');
-
-
-        for (let i = 0; i < liList.length; i++) {
-            liList[i].addEventListener("mouseover", function () {
+    for (let i = 0; i < liList.length; i++) {
+        liList[i].addEventListener("mouseover", function () {
             this.style.color = "red";
-        }); {liList[i].addEventListener("mouseleave", function () {
+        });
+        {
+            liList[i].addEventListener("mouseleave", function () {
                 this.style.color = "black";
-        })
-            }}
+            })
+        }
+    }
 
 </script>
 </body>
