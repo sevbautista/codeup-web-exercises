@@ -27,6 +27,8 @@
     <h1>Attributes and CSS in JS</h1>
 
 </header>
+<h1 id="codeup">Hello Codeup</h1>
+
 <p id="text">Hello World!</p>
 </p>
 <script>
@@ -65,6 +67,12 @@ textElement.style.backgroundColor = "black";
 // Change the font-size
 textElement.style.fontSize = "20px";
 
+document.querySelector('#text').addEventListener("click", () => alert('h1 with id "codeup" was clicked') );
+document.querySelector('#codeup').addEventListener('dblclick', () => alert('h1 with the id of "codeup" was double clicked!'));
+// document.querySelector( '#codeup' ).addEventListener('mouseenter', () => alert ('whoop!'));
+document.querySelector( '#codeup' ).addEventListener('mouseleave', function() {
+    console.log("leaving " + this);
+});
 
 </script>
 </body>
