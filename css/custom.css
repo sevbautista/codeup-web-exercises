@@ -61,3 +61,17 @@ ul {
 .card {
     width: 85%
 }
+
+.bi {
+    color: grey;
+    margin-right: 7px;
+}
+.subTitle {
+    width: max-content;
+    color: white;
+background-color: #0e6dfd;
+}
+
+.radio-holder {
+    display: flex
+}
