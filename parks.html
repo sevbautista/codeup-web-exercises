@@ -142,15 +142,29 @@
 
 
     // this makes all the children of the first .park-Names parent bold when any of the .park-names parents are pressed
-    const parkParent = document.querySelectorAll(".park-Names");
-    const makeBold = document.querySelector(".park-Facts").children;
+    // MY ORIGINAL CODE
+    // const parkParent = document.querySelectorAll(".park-Names");
+    // const makeBold = document.querySelector(".park-Facts").children;
+    //
+    // // let myFunction = function () {
+    // for (let i = 0; i < parkParent.length; i++) {
+    //     parkParent[i].addEventListener("click", function () {
+    //         for (let i = 0; i < makeBold.length; i++) {
+    //             makeBold[i].style.fontWeight = "bold";
+    //         }
+    //     });
+    // }
 
-    // let myFunction = function () {
+
+
+    // FARRUKH FIXED
+    const parkParent = document.querySelectorAll(".park-Names");
+    const makeBold = document.querySelectorAll(".park-Facts");
+
+
     for (let i = 0; i < parkParent.length; i++) {
         parkParent[i].addEventListener("click", function () {
-            for (let i = 0; i < makeBold.length; i++) {
                 makeBold[i].style.fontWeight = "bold";
-            }
         });
     }
 
@@ -170,7 +184,8 @@
 
     // parkParent.addEventListener('click', myFunction())
     // parkParent.forEach(makeBold => makeBold.addEventListener('click', event));
-    //
+
+    // MY ORIGINAL CODE
     // const liClick = document.getElementsByClassName('li');
     // liClick.parentElement.firstElementChild.addEventListener("click", function () {
     //     for (let i = 0; i < liClick.length; i++) {
@@ -178,6 +193,15 @@
     //         liClick[i].style.color = "blue";
     //     }
     // });
+
+//     FARRUKH FIXED
+    const liClick = document.querySelectorAll('li');
+    for (let i = 0; i < liClick.length; i++) {
+        liClick[i].addEventListener('click', function () {
+            liClick[i].parentElement.firstElementChild.style.color = "blue";
+        })
+
+    }
 
 // Farrukh's Example
 //     const listItems = document.querySelectorAll("li");
@@ -188,28 +212,6 @@
 //         })
 //     }
 // ==================================================================================
-//     // Assuming parkParent is a class, use querySelectorAll
-//     const parkParents = document.querySelectorAll('.parkParent');
-//
-//     // Use a function reference without parentheses for the event listener
-//     parkParents.forEach(parkParent => {
-//         parkParent.addEventListener('click', myFunction);
-//     });
-//
-//     // Convert HTMLCollection to an array using Array.from
-//     const liClick = Array.from(document.getElementsByClassName('li'));
-//
-//     // Use a specific element from the array for the event listener
-//     liClick[0].parentElement.firstElementChild.addEventListener("click", function () {
-//         for (let i = 0; i < liClick.length; i++) {
-//             console.log(liClick);
-//             liClick[i].style.color = "blue";
-//         }
-//     });
-//
-//     function myFunction() {
-//         // Your function logic here
-//     }
 
 </script>
 </body>
