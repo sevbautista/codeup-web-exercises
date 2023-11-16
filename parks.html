@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parks</title>
+    <style>
+        .highlighter {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<h1>National Parks FAQ</h1>
+<dl>
+    <dt>How many people visit the national parks?</dt>
+    <dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+
+    <dt>How old is the National Park System?</dt>
+    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
+
+    <dt>How many employees are in the National Park Service?</dt>
+    <dd>Permanent, temporary, and seasonal employees: More than 20,000</dd>
+
+    <dt>What is the origin of the National Park Service arrowhead?</dt>
+    <dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on
+        July 20, 1951.
+    </dd>
+
+    <dt>How many areas are in the National Park System?</dt>
+    <dd>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia,
+        American Samoa, Guam, Puerto Rico, and the Virgin Islands.
+    </dd>
+
+    <dt>What is the largest national park site?</dt>
+    <dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
+
+    <dt>What is the National Park Service budget?</dt>
+    <dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>
+
+    <dt>Can I bring my pet to a national park?</dt>
+    <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging
+        facilities.
+    </dd>
+
+    <dt>How do I apply for a job with the National Park Service?</dt>
+    <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on "USA JOB"s.</dd>
+
+    <dt>What do I need to know about driving off-road in national parks?</dt>
+    <dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road
+        driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.
+    </dd>
+</dl>
+<h3 class="park-Names">Yellowstone National Park</h3>
+<ul class="park-Facts">
+    <li>Park originally had different name.</li>
+    <li>Yellowstone Lake is the largest high-elevation lake in North America.</li>
+    <li>Has largest bison population on public land.</li>
+    <li>Sits on an active Volcano.</li>
+</ul>
+<h3 class="park-Names">Guadalupe Mountains National Park</h3>
+<ul class="park-Facts">
+    <li>Has the largest exposed fossil reef on Earth.</li>
+    <li>"El Capitan" is a 1,000-foot-high limestone cliff.</li>
+    <li>Comprises 76293 acres of mountain and desert land in West Texas.</li>
+    <li>location of the greatest mass extinction of all time.</li>
+</ul>
+<h3 class="park-Names">Big Bend National Park</h3>
+<ul class="park-Facts">
+    <li>Larger than the state of Rhode Island.</li>
+    <li>Park protects over 1,200 species of plants, and over 580 species of birds, reptiles and mammals combined.</li>
+    <li>Spans along the Rio Grande.</li>
+    <li>Home to over 10,000 archaeological sites.</li>
+</ul>
+<button type="button" id="lastLiColor">Now in 'Yellow!'</button>
+<script>
+    // this will make all the children of the first parent .park-Facts change color
+    // const lastYellow = document.querySelector(".park-Facts").children;
+    // for (let i = 0; i < lastYellow.length; i++) {
+    //     lastYellow[i].style.color = "yellow";
+    // }
+
+    // // this will select and change color for all children of parent .park-Facts
+    // const lastYellow = document.querySelectorAll(".park-Facts");
+    // for (let i = 0; i < lastYellow.length; i++) {
+    //     lastYellow[i].style.color = "yellow";
+    // }
+
+    // this will change all the last children of each .park-Facts parent
+    // const lastYellow = document.querySelectorAll(".park-Facts");
+    // for (let i = 0; i < lastYellow.length; i++) {
+    //     lastYellow[i].lastElementChild.style.color = "yellow";
+    // }
+
+    // this will make all last element children change to yellow when the button is clicked
+    document.querySelector("#lastLiColor").addEventListener("click", function () {
+        const lastYellow = document.querySelectorAll(".park-Facts");
+        for (let i = 0; i < lastYellow.length; i++) {
+            lastYellow[i].lastElementChild.style.color = "yellow";
+        }
+    });
+
+    // Farrukh's Example=========================================================
+    // const listitems = document.querySelectorAll("li");
+    // document.querySelector('#btn').addEventListener('click', function (){
+    //     const uls = document.querySelectorAll("ul");
+    //     for(const ul of uls) {
+    //         ul.lastElementChild.classList.add("highlighter");
+    //     }
+    // })
+    // ========================================================================
+
+    // Johnny's Example===========================================================
+    //   // TARGETING ALL H3s AND STORING THEM IN allH3s VARIABLE
+    // const allH3s = document.querySelectorAll("h3");
+    //
+    // // CREATING A LISTENER FUNCTION WITH LOGIC/EXECUTABLE CODE
+    // function listBgColorYellow () {
+    //     // USING A forEach TO LOOP THROUGH ALL MY H3 ELEMENTS
+    //     allH3s.forEach((eachIndividualH3)=> {
+    //         // vvv ALL H3 ELEMENTS;                vvv LAST LI IN UL;
+    //         eachIndividualH3.nextElementSibling.lastElementChild.style.backgroundColor = "yellow";
+    //         //               ^^^ NEXT SIBLING (ULs);                ^^^ DO THE STYLING;
+    //     })
+    // }
+    // // vvv TARGETING MY YELLOW BG BUTTON;
+    // let yellowBtn = document.getElementById("yellow-BG");
+    // //   vvv SETTING EVENT LISTENER ON MY BUTTON.
+    // yellowBtn.addEventListener("click", listBgColorYellow);
+    // // ^^^CLICK EVENT ^^^ CALLING MY FUNCTION
+// ==============================================================================
+
+    // this will make all the children of the first .park-Names parent, bold
+    // document.querySelector(".park-Names").addEventListener("click", function (){
+    //     const makeBold = document.querySelector(".park-Facts").children;
+    //     for (let i = 0; i <makeBold.length; i ++) {
+    //         makeBold[i].style.fontWeight = "bold";
+    //     }
+    // });
+
+
+
+
+    // this makes all the children of the first .park-Names parent bold when any of the .park-names parents are pressed
+    const parkParent = document.querySelectorAll(".park-Names");
+    const makeBold = document.querySelector(".park-Facts").children;
+
+    // let myFunction = function () {
+    for (let i = 0; i < parkParent.length; i++) {
+        parkParent[i].addEventListener("click", function () {
+            for (let i = 0; i < makeBold.length; i++) {
+                makeBold[i].style.fontWeight = "bold";
+            }
+        });
+    }
+
+    // Farrukh's Example
+    // const h3s = document.querySelectorAll('h3');
+    //
+    // for (const h3 of h3s) {
+    //     h3.addEventListener('click', function () {
+    //         const lis = this.nextElementSibling.children;
+    //         for( const li of lis) {
+    //             li.style.fontWeight = "bold";
+    //         }
+    //     })
+    // }
+
+
+
+    // parkParent.addEventListener('click', myFunction())
+    // parkParent.forEach(makeBold => makeBold.addEventListener('click', event));
+    //
+    // const liClick = document.getElementsByClassName('li');
+    // liClick.parentElement.firstElementChild.addEventListener("click", function () {
+    //     for (let i = 0; i < liClick.length; i++) {
+    //         console.log(liClick);
+    //         liClick[i].style.color = "blue";
+    //     }
+    // });
+
+// Farrukh's Example
+//     const listItems = document.querySelectorAll("li");
+//
+//     for (const listItem of listItems) {
+//         listItem.addEventListener('click', function (){
+//             this.parentElement.firstElementChild.style.color = 'blue';
+//         })
+//     }
+// ==================================================================================
+//     // Assuming parkParent is a class, use querySelectorAll
+//     const parkParents = document.querySelectorAll('.parkParent');
+//
+//     // Use a function reference without parentheses for the event listener
+//     parkParents.forEach(parkParent => {
+//         parkParent.addEventListener('click', myFunction);
+//     });
+//
+//     // Convert HTMLCollection to an array using Array.from
+//     const liClick = Array.from(document.getElementsByClassName('li'));
+//
+//     // Use a specific element from the array for the event listener
+//     liClick[0].parentElement.firstElementChild.addEventListener("click", function () {
+//         for (let i = 0; i < liClick.length; i++) {
+//             console.log(liClick);
+//             liClick[i].style.color = "blue";
+//         }
+//     });
+//
+//     function myFunction() {
+//         // Your function logic here
+//     }
+
+</script>
+</body>
+</html>

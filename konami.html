@@ -11,37 +11,49 @@
 
     // document.addEventListener("keyup", event => console.log(event.key) );
 
-    // document.addEventListener("keydown", event => console.log(event.key) );
-    // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
-    // document.onkeydown = function(e) {
-    //     let keyPress;
-    //     if (typeof event !== 'undefined') {
-    //         keyPress = event.key;
-    //     }
-    //     else if (e) {
-    //         keyPress = e.which;
-    //     }
-    //     userKeys.push(String.fromCharCode(keyPress));
-    //
-    // };
+    document.addEventListener("keydown", event => console.log(event.key) );
+    document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
+    document.onkeydown = function(e) {
+        let keyPress;
+        if (typeof event !== 'undefined') {
+            keyPress = event.key;
+        }
+        else if (e) {
+            keyPress = e.which;
+        }
+        userKeys.push(String.fromCharCode(keyPress));
+
+    };
     let userKeys = [];
+    const konami = "['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']";
+    // // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
+    //
+    // document.onkeydown = function myKeyPressFunction(event) {
+    //     userKeys.push(event.key);
+    //
+    //     if (`${userKeys} === ${konami}`) {
+    //         console.log(userKeys);
+    //
+    //     } else{
+    //     console.log("yep")
+    // }}
+    //
+    // // document.addEventListener('keydown', myKeyPressFunction);}
 
-    let konami = 'b';
-    // let konami = "['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']";
-    // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
+    // Konami Code sequence
 
-    document.onkeydown = function myKeyPressFunction(event) {
-        userKeys.push(event.key);
+    function checkKonamiCode(e) {
+        userInput.push(e.key);
 
-        if (`${userKeys} === ${konami}`) {
-            console.log(userKeys);
+        // Check if the entered sequence matches the Konami Code
+        if (userInput.length === konamiCode.length && userInput.every((value, index) => value === konamiCode[index])) {
+            alert("You have added 30 lives!");
+            userInput = []; // Reset the input for potential future entries
+        }
+    }
 
-        } else{
-        console.log("yep")
-    }}
-
-    // document.addEventListener('keydown', myKeyPressFunction);}
-
+    // Event listener for keypress
+    document.addEventListener("keydown", checkKonamiCode);
 
 </script>
 </body>
