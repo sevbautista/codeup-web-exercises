@@ -9,51 +9,70 @@
 <script>
     "use strict";
 
-    // document.addEventListener("keyup", event => console.log(event.key) );
+    // // document.addEventListener("keyup", event => console.log(event.key) );
+    //
+    // document.addEventListener("keydown", event => console.log(event.key) );
+    // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
+    // document.onkeydown = function(e) {
+    //     let keyPress;
+    //     if (typeof event !== 'undefined') {
+    //         keyPress = event.key;
+    //     }
+    //     else if (e) {
+    //         keyPress = e.which;
+    //     }
+    //     userKeys.push(String.fromCharCode(keyPress));
+    //
+    // };
+    // let userKeys = [];
+    // const konami = "['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']";
+    // // // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
+    // //
+    // // document.onkeydown = function myKeyPressFunction(event) {
+    // //     userKeys.push(event.key);
+    // //
+    // //     if (`${userKeys} === ${konami}`) {
+    // //         console.log(userKeys);
+    // //
+    // //     } else{
+    // //     console.log("yep")
+    // // }}
+    // //
+    // // // document.addEventListener('keydown', myKeyPressFunction);}
 
-    document.addEventListener("keydown", event => console.log(event.key) );
-    document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
-    document.onkeydown = function(e) {
-        let keyPress;
-        if (typeof event !== 'undefined') {
-            keyPress = event.key;
-        }
-        else if (e) {
-            keyPress = e.which;
-        }
-        userKeys.push(String.fromCharCode(keyPress));
 
-    };
+
     let userKeys = [];
-    const konami = "['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']";
-    // // document.addEventListener('keydown', event => userKeys.push(`key pressed: ${event.target}`))
-    //
-    // document.onkeydown = function myKeyPressFunction(event) {
-    //     userKeys.push(event.key);
-    //
-    //     if (`${userKeys} === ${konami}`) {
-    //         console.log(userKeys);
-    //
-    //     } else{
-    //     console.log("yep")
-    // }}
-    //
-    // // document.addEventListener('keydown', myKeyPressFunction);}
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
 
-    // Konami Code sequence
+    function checkCode(e) {
+        userKeys.push(e.key);
 
-    function checkKonamiCode(e) {
-        userInput.push(e.key);
-
-        // Check if the entered sequence matches the Konami Code
-        if (userInput.length === konamiCode.length && userInput.every((value, index) => value === konamiCode[index])) {
-            alert("You have added 30 lives!");
-            userInput = []; // Reset the input for potential future entries
+        if (userKeys.length === konamiCode.length && userKeys.every((value, index) => value === konamiCode[index])) {
+                    alert("You have added 30 lives!");
+            userKeys = [];
         }
     }
+    document.addEventListener("keydown", checkCode);
 
-    // Event listener for keypress
-    document.addEventListener("keydown", checkKonamiCode);
+//     ===================
+// JOSH'S CODE IS STRUCTURED DIFFERENTLY FROM MINE AND HAS AN ALERT FOR TRYING AGAIN
+    // const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    // let userInput = 0;
+    //
+    // document.addEventListener("keyup", event => {
+    //     if (konamiCode[userInput] !== event.key) {
+    //         userInput = 0;
+    //         alert("Wrong! Try again!")
+    //     } else {
+    //         userInput++;
+    //     }
+    //     if (userInput === 11) {
+    //         alert("You get 30 lives!");
+    //         userInput = 0;
+    //     }
+    // });
+
 
 </script>
 </body>
