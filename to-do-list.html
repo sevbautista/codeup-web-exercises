@@ -35,54 +35,83 @@
 <script>
 
 
-//    const toDoList = document.querySelector('#to-do-list');
-//    const formInput = document.querySelector("input[type='text']");
-//    const listItem = document.createElement("li");
-//    const listP = document.createElement("p");
-//    const listBtn = document.createElement("button")
-//    const toDoForm = document.querySelector('#to-do-form').appendChild(listItem);
-//    const theListItems = (event) => {
-//        event.preventDefault();
-//        listP.classList.add("m-0");
-//        listP.innerHTML = formInput.value;
-//        listItem.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
-//        listBtn.classList.add("btn", "btn-danger");
-//        listBtn.innerHTML = "Done";
-//        listItem.appendChild(listP);
-//        toDoList.appendChild(listItem);
-//        listP.appendChild(listBtn);
-//        formInput.value = '';
-//
-//    }
-//
-//    const eventButton = document.querySelectorAll(".btn-secondary");
-//
-//    eventButton.forEach(button => button.addEventListener('click', theListItems));
-// GET A REFERENCE TO THE FORM
-    const form = document.getElementsByClassName("to-do-form");
-//     ADD A TO-DO ITEM WHEN THE FORM IS SUBMITTED
-    form.addEventListener("submit", event => {
+    //    const toDoList = document.querySelector('#to-do-list');
+    //    const formInput = document.querySelector("input[type='text']");
+    //    const listItem = document.createElement("li");
+    //    const listP = document.createElement("p");
+    //    const listBtn = document.createElement("button")
+    //    const toDoForm = document.querySelector('#to-do-form').appendChild(listItem);
+    //    const theListItems = (event) => {
+    //        event.preventDefault();
+    //        listP.classList.add("m-0");
+    //        listP.innerHTML = formInput.value;
+    //        listItem.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
+    //        listBtn.classList.add("btn", "btn-danger");
+    //        listBtn.innerHTML = "Done";
+    //        listItem.appendChild(listP);
+    //        toDoList.appendChild(listItem);
+    //        listP.appendChild(listBtn);
+    //        formInput.value = '';
+    //
+    //    }
+    //
+    //    const eventButton = document.querySelectorAll(".btn-secondary");
+    //
+    //    eventButton.forEach(button => button.addEventListener('click', theListItems));
+    // GET A REFERENCE TO THE FORM
+    // const form = document.getElementsByClassName("to-do-form");
+    // //     ADD A TO-DO ITEM WHEN THE FORM IS SUBMITTED
+    // form.addEventListener("submit", event => {
+    //     event.preventDefault();
+    //     const todo = form.firstElementChild.nextElementSibling.value;
+    //
+    //     const todoLi = document.createElement("li");
+    //     todoLi.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center")
+    //     todoLi.innerHTML = `<p>${todo}</p>` + `<button class="btn btn-danger">Remove</button>`
+    //     document.getElementById("to-do-list").appendChild(todoLi)
+    //
+    //     form.firstElementChild.nextElementSibling.value = "";
+    // })
+    //
+    // //     DELETE A TO-DO ITEM WHEN THE REMOVE BUTTON IS CLICKED
+    //
+    // document.getElementById("to-do-list").addEventListener("click", event => {
+    //     if (event.target.classList.contains("btn")) {
+    //         // event.target.parentElement.remove();
+    //         event.target.parentElement("");
+    //
+    //     }
+    //
+    // })
+
+
+    const toDoList = document.querySelector('#to-do-list');
+    const formInput = document.querySelector("input[type='text']");
+    const formBtn = document.querySelector(".add");
+
+    formBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        const todo = form.firstElementChild.nextElementSibling.value;
+        const listItem = document.createElement("li");
+        listItem.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
 
-        const todoLi = document.createElement("li");
-        todoLi.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center")
-        todoLi.innerHTML = `<p>${todo}</p>` + `<button class="btn btn-danger">Remove</button>`
-        document.getElementById("to-do-list").appendChild(todoLi)
+        const listP = document.createElement("p");
+        listP.classList.add("m-0");
+        listP.textContent = formInput.value;
 
-        form.firstElementChild.nextElementSibling.value = "";
-    })
+        const listBtn = document.createElement("button");
+        listBtn.classList.add("btn", "btn-danger");
+        listBtn.textContent = "Done";
 
-//     DELETE A TO-DO ITEM WHEN THE REMOVE BUTTON IS CLICKED
+        listItem.appendChild(listP);
+        listItem.appendChild(listBtn);
+        toDoList.appendChild(listItem);
 
-    document.getElementById("to-do-list").addEventListener("click", event => {
-        if (event.target.classList.contains("btn")){
-            // event.target.parentElement.remove();
-            event.target.parentElement("");
+        formInput.value = '';
 
-        }
-
-    })
+        listBtn.addEventListener('click', function () {
+            listItem.remove();
+        });
+    });
 
 </script>
 
