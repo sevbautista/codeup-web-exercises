@@ -6,15 +6,87 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="css/warmup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-<script src="warm-ups/warmUps.js"></script>
 <h1>Warm Ups</h1>
 <p>
-<p>I think my ideal web dev job would be working for myself, probably doing something like creating mobile apps. I've a few ideas of things I'd like to see and I think being able to make those happen instead of always saying "Man, it would be cool if someone made a [blank] app" would be great. I'm not adverse to the idea of working in a company or alongside others in a team or so, but the idea of being able to guide my own direction sounds nice, and ultimately I'd like to take what I learn here and apply it towards something like that.</p>
-<p>I'm not entirely sure at this point what all that would entail, I've worked in such a wide range of jobs and environments and the ones that offered me the most opportunity for self-sufficiency stood out to me the most and, though it was the most daunting, it felt good nonetheless to be able to experience that kind of control over the work.</p>
-<p>SMART Goal:<ul>
-    <li>Specific: I want to create a mobile app that I can put up in mobile app stores</li><li>Measurable: I am able to track my progress in this class and the knowledge gained that is necessary to reach my objective</li><li>Achievable: This is something I can see becoming a reality, and a milestone that can lead to further goals.</li><li>Relevant: Success in this class is directly related to my goals and ambitions following this first milestone and the growth I intend to make after and beyond.</li><li>Time-Bound: I would like to see myself accomplish this before the end of next-year, more specifically be achieved by my Birthday.</li></ul>
+<p>I think my ideal web dev job would be working for myself, probably doing something like creating mobile apps. I've a
+    few ideas of things I'd like to see and I think being able to make those happen instead of always saying "Man, it
+    would be cool if someone made a [blank] app" would be great. I'm not adverse to the idea of working in a company or
+    alongside others in a team or so, but the idea of being able to guide my own direction sounds nice, and ultimately
+    I'd like to take what I learn here and apply it towards something like that.</p>
+<p>I'm not entirely sure at this point what all that would entail, I've worked in such a wide range of jobs and
+    environments and the ones that offered me the most opportunity for self-sufficiency stood out to me the most and,
+    though it was the most daunting, it felt good nonetheless to be able to experience that kind of control over the
+    work.</p>
+<p>SMART Goal:
+<ul>
+    <li>Specific: I want to create a mobile app that I can put up in mobile app stores</li>
+    <li>Measurable: I am able to track my progress in this class and the knowledge gained that is necessary to reach my
+        objective
+    </li>
+    <li>Achievable: This is something I can see becoming a reality, and a milestone that can lead to further goals.</li>
+    <li>Relevant: Success in this class is directly related to my goals and ambitions following this first milestone and
+        the growth I intend to make after and beyond.
+    </li>
+    <li>Time-Bound: I would like to see myself accomplish this before the end of next-year, more specifically be
+        achieved by my Birthday.
+    </li>
+</ul>
+<section class="border border-lg-none p-4 col-lg-4">
+    <form id="to-do-form">
+        <h3><label class="form-label" for="to-do">My To-Do List:</label></h3>
+        <input class="form-control" type="text" name="to-do" id="to-do">
+        <div class="d-grid">
+            <button class="btn btn-secondary mt-3 add">Add</button>
+        </div>
+    </form>
+</section>
+<section class="my-4 my-lg-0 col-lg-8">
+    <h3>To-Dos:</h3>
+    <ul class="list-group" id="to-do-list">
+    </ul>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+<script src="warm-ups/warmUps.js">
+
+    const toDoList = document.querySelector('#to-do-list');
+    const formInput = document.querySelector("input[type= 'text']");
+    const formBtn = document.querySelector(".add");
+
+
+    formBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        const listItem = document.createElement("li");
+        listItem.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
+
+        const listP = document.createElement("p");
+        listP.classList.add("m-0");
+        listP.textContent = formInput.value;
+
+        const listBtn = document.createElement("button");
+        listBtn.classList.add("btn", "btn-success");
+        listBtn.textContent = "Done";
+
+        listItem.appendChild(listP);
+        listItem.appendChild(listBtn);
+        toDoList.appendChild(listItem);
+
+        formInput.value = '';
+
+        listBtn.addEventListener('click', function () {
+            listItem.remove();
+        })
+    })
+
+
+</script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // function heading(str) {
 //     let heading1 = '<h1>';
