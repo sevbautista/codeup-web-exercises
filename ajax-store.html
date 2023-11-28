@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script>
+    // EXERCISE 2: AJAX STORE:
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    const newBody = document.querySelector("#insertProducts")
+    const newTD = document.createElement("td");
+    // const products = document.getElementById("products")
+    // const jsonData = fetch("data/inventory.json")
+
+    fetch("data/inventory.json")
+        .then(res => res.json())
+        .then(data => {
+            data.forEach( data => {
+                for(let i = 0; i <data.length; i++)
+                // newTD.classList.add("table-data")
+                newTD.innerHTML = data[0].title
+                newBody.appendChild(newTD)
+            })
+            // console.log(data)
+            // for(let i = 0; i <products.length; i++)
+
+
+            // newTD.classList.add("table-data")
+            // newTD.innerHTML = data[0].title
+            // newBody.appendChild(newTD)
+            // newTD.after(data[0].categories)
+            // newTD.after(data[0].quantity)
+            // newTD.after(data[0].price)
+
+        })
+
+    // for (let i=0; i<listItems.length; i++) {
+    //     unorderedList.append(listItems[i])
+    // }
+
+    // fetch('https://api.github.com/users')
+    //     .then(response => response.json())
+    //     .then(users => {
+    //         users.forEach( user => {
+    //             // log each user's username (or login property)
+    //             console.log(user.login);
+    //         })
+    //     })
+    //     .catch(error => console.error(error));
+    // const jsonData = fetch("data/inventory.json")
+
+    //
+    //     .then(data.title)
+    // const table = document.querySelector('#products')
+    //     const title1 = document.getElementsByTagName("th");
+    //
+    //     fetch("data/inventory.json")
+    //         .then(res => res.json())
+    //         .then(data => console.log(data[0].title, data[1].title, data[2].title, data[3].title)).
+
+    // function makeitso(event) {
+    //     for (let i = 0; i < table.length; i++) ;
+    //     event.preventDefault();
+    //     fetch("data/inventory.json")
+    //         .then(res => res.json())
+    //         .then(data => console.log(data.title))
+    //
+    //             .then(data => {
+    //             console.log(data)
+    //             title1.innerHTML = (data[0].title, data[1].title, data[2].title, data[3].title)
+    //         })
+    // }
+    //
+    // const jsonTable = data => `<th>${data[0].title </th>`
+
+
+    //
+    //     <thead>
+    // <tr>
+    //     <th>Title</th>
+    //     <th>Quantity</th>
+    //     <th>Price</th>
+    //     <th>Categories</th>
+    // </tr>
+    // </thead>
+
+
+    //   const tble = item => `<thead>
+    // <th>${data[0].title}</th>
+    //   <th>${data[0].quantity}</th>
+    //   <th>${data[0].price}</th>
+    //   <th>${data[0].categories}</th>
+    // </thead>`;
+    //     // fetch("data/inventory.json")
+    //     //     .then(res => res.json())
+    //     document.querySelector("#products").innerHTML = jsonData.map(item => tble(item)).join('');
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+</script>
+
+</body>
+</html>

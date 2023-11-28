@@ -1,97 +1,37 @@
 "use strict";
-// fetch('https://api.github.com/users/', {headers: {'Authorization': 'token' + GITHUB_API_KEY}})
+// EXERCISE 1: HANDLE AN API PROMISE:
 
-fetch('https://api.github.com/users')
-    .then(response => response.json())
-    .then(users => {
-        users.forEach(user => {
-            console.log(user.received_events_url)
-        })})
-
-    // .catch(error => console.error(error));
-
-// function getGithubUsernames() {
-//     return fetch('https://api.github.com/users')
-//         .then(response => response.json())
-//         .then(user => user.events.public)
-//     console.log(user.events.public)
+const searchForm = document.querySelector('#searchForm');
+// const paragraph = document.querySelector("p");
+let container = document.querySelector(".container");
 
 
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let input = document.querySelector("#searchBar").value
+    fetch(`https://api.github.com/users/${input}/events/public`)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data[0])
+            console.log(paragraphElement(data))
+        })
 
-const lastCommit = "";
-const userName = document.querySelector("#searchBar").value
-
- // https://github.com/octokit/core.js#readme
-// const octokit = new octokit({
-//     auth: 'GITHUB_API_KEY'
-// })
-//
-// await octokit.request('GET /users/{username}/events/public', {
-//     username: 'userName',
-//     headers: {
-//         'X-GitHub-Api-Version': '2022-11-28'
-//     }
-// })
-// ==================
-// function createPokemonElement(data) {
-//     // console.log(data.name)
-//     const paragraph = document.createElement("p");
-//     let container = document.querySelector(".container");
-//     paragraph.innerHTML = data.name;
+})
+function paragraphElement(data) {
+    let aychOne = document.createElement("h1")
+    aychOne.innerHTML = `The user, "${document.querySelector("#searchBar").value}" last updated on ${new Date (data[0].created_at)}`
+    container.appendChild(aychOne)
+}
+// function paragraphElement(data) {
+//     let paragraph = document.createElement("p")
+//     paragraph.innerHTML = `The user, "${document.querySelector("#searchBar").value}" last updated on ${data[0].created_at}`
 //     container.appendChild(paragraph)
-//     //     image
-//     const image = document.createElement("img");
-//     paragraph.appendChild(image)
-//     image.src = data.sprites.front_shiny;
-//     image.style.height = "200px"
-//
 // }
-//
-// function onError(error) {
-//     console.log("Error", error)
-// }
-//
-//
-// const searchForm = document.querySelector('#searchForm');
-// searchForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     let input = document.querySelector("#searchBar").value
-//
-//     fetch(`https://pokeapi.co/api/v2/pokemon/${input}`)
-//         .then(res => res.json())
-//         .then(data => createPokemonElement(data))
-//         .catch(onFail)
-//
-// })
 
-// ================
-//
-// function getLastCommitDate(username) {
-//     const url = `https://api.github.com/users/${username}/events`;
-//
-//     return new Promise((resolve, reject) => {
-//         fetch(url, {
-//             headers: {
-//                 'Authorization': 'token GITHUB_API_KEY'
-//             }
-//         })
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error(`GitHub API request failed: ${response.status}`);
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 const commitEvents = data.filter(event => event.type === 'PushEvent');
-//                 if (commitEvents.length > 0) {
-//                     const lastCommitDate = commitEvents[0].created_at;
-//                     resolve(lastCommitDate);
-//                 } else {
-//                     reject(new Error('No commit events found for the user.'));
-//                 }
-//             })
-//             .catch(error => {
-//                 reject(error);
-//             });
-//     });
-// }
+// CREATED AN EVENT LISTENER THAT WILL PUT THE INPUT FIELD DATA INTO A PARAGRAPH IN ITS OWN DIV, THE INPUT BEING THE SELECTED INFORMTION FROM THE FETCHED DATA THAT WAS JSON'D, GETTING THE FIRST PARENT OF THAT INFORMATION, "[0]" TO THEN FIND THE LATEST PUBLIC PUSH WITH "CREATED_AT", I ALSO ADDED A "NEW DATE" METHOD AND CHANGED FROM A PARAGRAPH TO AN H1 ELEMENT
+// ===============
+
+
+
+
+
