@@ -152,20 +152,20 @@ In simpler terms:
     //     })
     //     .catch(error => console.error(error));
     //
-    // fetch('https://api.github.com/users')
-    //     .then(response => response.json())
-    //     .then(users => {
-    //         console.log(users)
-    //         users.forEach(user =>{
-    //             console.log(user.login)
-    //             console.log(user.type)
-    //         })
-    //     })
-    //     .catch(error => console.error(error));
-    // function getGithubUsernames() {
-    //     return fetch('https://api.github.com/users')
-    //         .then(response => response.json())
-    // }
+    fetch('https://api.github.com/users')
+        .then(response => response.json())
+        .then(users => {
+            console.log(users)
+            users.forEach(user =>{
+                console.log(user.login)
+                console.log(user.type)
+            })
+        })
+        .catch(error => console.error(error));
+    function getGithubUsernames() {
+        return fetch('https://api.github.com/users')
+            .then(response => response.json())
+    }
 
 
     // YOU DO:
@@ -216,6 +216,8 @@ In simpler terms:
             .catch(onFail)
 
     })
+
+
     function processBooks(books) {
         for(let i = 0; i < book.length; i++) {
             document.querySelector('.books').innerText += books[i].title + "\n";

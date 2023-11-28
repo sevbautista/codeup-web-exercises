@@ -1,3 +1,5 @@
+const url = 'https://api.github.com/users';
+
 fetch(url, {headers: {'Authorization': 'token' + GITHUB_API_KEY}})
 
     // fetch("/some-url", {
@@ -5,3 +7,4 @@ fetch(url, {headers: {'Authorization': 'token' + GITHUB_API_KEY}})
     //     headers: { "Content-Type": "application/json" },
     // body: JSON.stringify(someData),
     // });
+

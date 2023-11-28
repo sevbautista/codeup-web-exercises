@@ -8,15 +8,28 @@
     <title>Document</title>
 </head>
 <body>
+<form id="searchForm">
+    <input type="text" id="searchBar" placeholder="Username">
+    <input type="submit" id="searchButton" value="Search">
+
+</form>
+<div class="container"></div>
 
 <script src="js/fetch.js">
-    fetch(url, {headers: {'Authorization': 'token' + GITHUB_API_KEY}})
-
-//     fetch("/some-url", {
-//     method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(someData),
-//     });
+    // // fetch(url, {headers: {'Authorization': 'token' + GITHUB_API_KEY}})
+    // fetch('https://api.github.com/users/')
+    //
+    //     .then(response => response.json())
+    //     .then(data => console.log(data.name))
+    // ===================
+    // const username = 'your-github-username';
+    // getLastCommitDate(username)
+    //     .then(date => {
+    //         console.log(`Last commit date for ${username}: ${date}`);
+    //     })
+    //     .catch(error => {
+    //         console.error(`Error: ${error.message}`);
+    //     });
 
 </script>
 <script src="js/keys.js"></script>

@@ -334,3 +334,68 @@ let elements = [
 //     needed to do i % 3 === 0 && i % 5 === 0 as the first condition.
 // it was not running because i had ran the wrong condition first.
 
+
+const toDoList = document.querySelector('#to-do-list');
+const formInput = document.querySelector("input[type= 'text']");
+const formBtn = document.querySelector(".add");
+
+
+formBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    const listItem = document.createElement("li");
+    listItem.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
+
+    const listP = document.createElement("p");
+    listP.classList.add("m-0");
+    listP.textContent = formInput.value;
+
+    const listBtn = document.createElement("button");
+    listBtn.classList.add("btn", "btn-success");
+    listBtn.textContent = "Done";
+
+    listItem.appendChild(listP);
+    listItem.appendChild(listBtn);
+    toDoList.appendChild(listItem);
+
+    formInput.value = '';
+
+    listBtn.addEventListener('click', function () {
+        listItem.remove();
+    })
+})
+
+
+let  pokemon = fetch('https://pokeapi.co/api/v2/pokemon/duskull')
+    .then(randomParameterName => randomParameterName.json())
+    .then(anotherRandomParameter => {
+        console.log(anotherRandomParameter)
+        console.log(anotherRandomParameter.weight)
+        console.log(anotherRandomParameter.height)
+        console.log(anotherRandomParameter.name)
+        console.log(anotherRandomParameter.name, anotherRandomParameter.height, anotherRandomParameter.weight)
+        console.log(`Pokemon name is ${anotherRandomParameter.name}, and its height is ${anotherRandomParameter.height}, and its weight is ${anotherRandomParameter.weight}`)
+    })
+console.log(pokemon)
+
+function favoritePokemon(data) {
+    let container = document.querySelector("#container");
+    const image = document.createElement("img");
+    container.appendChild(image)
+    image.src = data.sprites.front_default;
+    image.style.height = "200px"
+}
+
+
+const favePoke = document.querySelector('.favePoke');
+favePoke.addEventListener('click', () => {
+    event.preventDefault();
+    fetch(`https://pokeapi.co/api/v2/pokemon/duskull`)
+        .then(res => res.json())
+        // .then(data => createPokemonElement(data)
+        .then(data => favoritePokemon(data)
+
+        )
+    console.log("poke button has been clicked")
+
+})
+
