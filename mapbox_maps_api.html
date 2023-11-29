@@ -21,6 +21,14 @@
         center: [-79.96475569017957, 40.42884827989157,], // starting position [lng, lat]
         zoom: 20, // starting zoom
     });
+
+
+    // Set marker options.
+    const marker = new mapboxgl.Marker({
+        color: "#d293a6",
+        draggable: false
+    }).setLngLat([-79.96475569017957, 40.42884827989157,])
+        .addTo(map);
 </script>
 <script>
 
