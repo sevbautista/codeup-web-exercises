@@ -9,27 +9,21 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #favePlaces {
+            display: inline-flex;
+        }
+    </style>
 </head>
 <body>
 
-<div id='map' style='width: 1000px; height: 1000px;'></div>
+<div id='map' style='width: 620px; height: 620px;'></div>
 
 <div id="favePlaces"></div>
+
 <script>
-    // mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YmF1dGlzdGEiLCJhIjoiY2xwanluNzlmMDQ4ZjJpbzcxb2xleTlrMyJ9.Vuq2Tc5q8esCQ1hugjVuPg';
-    // const map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     center: [-79.96475569017957, 40.42884827989157,], // starting position [lng, lat]
-    //     zoom: 19, // starting zoom
-    // });
-    //
-    //
-    // const marker = new mapboxgl.Marker({
-    //     color: "#d293a6",
-    //     draggable: false
-    // }).setLngLat([-79.96475569017957, 40.42884827989157,])
-    //     .addTo(map);
+
+
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YmF1dGlzdGEiLCJhIjoiY2xwanluNzlmMDQ4ZjJpbzcxb2xleTlrMyJ9.Vuq2Tc5q8esCQ1hugjVuPg';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -39,30 +33,44 @@
     });
 
 
-    const marker = new mapboxgl.Marker({
+    const marker1 = new mapboxgl.Marker({
         color: "#d293a6",
         draggable: false
     }).setLngLat([-79.96475569017957, 40.42884827989157,])
         .addTo(map);
 
 
-    const codeupPopup = new mapboxgl.Popup()
-        .setHTML("<p>Hofbräuhaus Pittsburgh\!</p>")
+    const codeupPopup1 = new mapboxgl.Popup()
+        .setHTML("<p>Sikhay Thai Lao Restaurant</p>")
 
-    marker.setPopup(codeupPopup);
+    marker1.setPopup(codeupPopup1);
+
+    const marker2 = new mapboxgl.Marker({
+        color: "#d293a6",
+        draggable: false
+    }).setLngLat([-97.414319023602, 32.68064132548091,])
+        .addTo(map);
+
+
+    const codeupPopup2 = new mapboxgl.Popup()
+        .setHTML("<p></p>")
+
+    marker2.setPopup(codeupPopup2);
+
+    const marker3 = new mapboxgl.Marker({
+        color: "#d293a6",
+        draggable: false
+    }).setLngLat([-97.29938427493634, 32.79560236754819,])
+        .addTo(map);
+
+
+    const codeupPopup3 = new mapboxgl.Popup()
+        .setHTML("<p>Hawaiian Bros</p>")
+
+    marker3.setPopup(codeupPopup3);
 
 </script>
-<script>
+<script src="js/mapbox_maps_api.js"></script>
 
-
-    //function geocode("Hawaiian Bros", MAPBOX_API) {
-    //    let baseUrl = 'https://api.mapbox.com';
-    //    let endPoint = '/geocoding/v5/mapbox.places/';
-    //    return fetch(`${baseUrl}${endPoint}${encodeURIComponent(search)}.json?access_token=${token}`)
-    //        .then( res => res.json() )
-    //        // to get all the data from the request, comment out the following three lines...
-    //        // .then( data => data.features[0].center);
-    //}
-</script>
 </body>
 </html>

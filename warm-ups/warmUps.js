@@ -398,23 +398,23 @@ favePoke.addEventListener('click', () => {
 
 })
 
-// const jsonDiv =document.querySelector('#json')
-// fetch("data/todo.json")
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         data.forEach(jsonData => {
-//             const postDiv = document.createElement("div");
-//             postDiv.innerHTML = `
-//             <h2>${jsonData.title}</h2>
-//             <p>${jsonData.content}</p>
-//             <h5>${jsonData.categories}</h5>
-//             <h6>${jsonData.date}</h6>
-//             `
-//             jsonDiv.appendChild(postDiv)
-//         })
-//
-//     })
+const jsonDiv =document.querySelector('#json')
+fetch("data/todo.json")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        data.forEach(jsonData => {
+            const postDiv = document.createElement("div");
+            postDiv.innerHTML = `
+            <h2>${jsonData.title}</h2>
+            <p>${jsonData.content}</p>
+            <h5>${jsonData.categories}</h5>
+            <h6>${jsonData.date}</h6>
+            `
+            jsonDiv.appendChild(postDiv)
+        })
+
+    })
 
 
 // const practiceTable = document.createElement("table");
