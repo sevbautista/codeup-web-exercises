@@ -6,11 +6,33 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 
-<script src="js/keys.js"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<div id='map' style='width: 1000px; height: 1000px;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YmF1dGlzdGEiLCJhIjoiY2xwanluNzlmMDQ4ZjJpbzcxb2xleTlrMyJ9.Vuq2Tc5q8esCQ1hugjVuPg';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-79.96475569017957, 40.42884827989157,], // starting position [lng, lat]
+        zoom: 20, // starting zoom
+    });
+</script>
+<script>
 
+
+    //function geocode("Hawaiian Bros", MAPBOX_API) {
+    //    let baseUrl = 'https://api.mapbox.com';
+    //    let endPoint = '/geocoding/v5/mapbox.places/';
+    //    return fetch(`${baseUrl}${endPoint}${encodeURIComponent(search)}.json?access_token=${token}`)
+    //        .then( res => res.json() )
+    //        // to get all the data from the request, comment out the following three lines...
+    //        // .then( data => data.features[0].center);
+    //}
+</script>
 </body>
 </html>
