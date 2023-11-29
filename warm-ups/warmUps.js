@@ -313,24 +313,24 @@ let elements = [
 
 // function fizzBuzz(num){
 // ============fix this===============
-    // for (let i = 1; i <= 100; i++){
-    //     if (i % 3 === 0 && i  % 5 === 0){
-    //         console.log('FizzBuzz')
-    //     } else {
-    //         console.log(i)
-    //     }if (i % 3 === 0){
-    // console.log(fizz) {
-    //     else {
-    //         if (i % 5 === 0){
-    //             console.log('Buzz')
-    //         }
-    //     }
-    // }
-        // else {
-        //     // if ([i] % 5 === 0){
-        //     }
-        //     console.log('buzz')
-        // }
+// for (let i = 1; i <= 100; i++){
+//     if (i % 3 === 0 && i  % 5 === 0){
+//         console.log('FizzBuzz')
+//     } else {
+//         console.log(i)
+//     }if (i % 3 === 0){
+// console.log(fizz) {
+//     else {
+//         if (i % 5 === 0){
+//             console.log('Buzz')
+//         }
+//     }
+// }
+// else {
+//     // if ([i] % 5 === 0){
+//     }
+//     console.log('buzz')
+// }
 //     needed to do i % 3 === 0 && i % 5 === 0 as the first condition.
 // it was not running because i had ran the wrong condition first.
 
@@ -365,7 +365,7 @@ formBtn.addEventListener('click', function (event) {
 })
 
 
-let  pokemon = fetch('https://pokeapi.co/api/v2/pokemon/duskull')
+let pokemon = fetch('https://pokeapi.co/api/v2/pokemon/duskull')
     .then(randomParameterName => randomParameterName.json())
     .then(anotherRandomParameter => {
         console.log(anotherRandomParameter)
@@ -393,9 +393,71 @@ favePoke.addEventListener('click', () => {
         .then(res => res.json())
         // .then(data => createPokemonElement(data)
         .then(data => favoritePokemon(data)
-
         )
     console.log("poke button has been clicked")
 
 })
 
+// const jsonDiv =document.querySelector('#json')
+// fetch("data/todo.json")
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//         data.forEach(jsonData => {
+//             const postDiv = document.createElement("div");
+//             postDiv.innerHTML = `
+//             <h2>${jsonData.title}</h2>
+//             <p>${jsonData.content}</p>
+//             <h5>${jsonData.categories}</h5>
+//             <h6>${jsonData.date}</h6>
+//             `
+//             jsonDiv.appendChild(postDiv)
+//         })
+//
+//     })
+
+
+// const practiceTable = document.createElement("table");
+// practiceTable.setAttribute('id', 'practiceTable')
+// const tableHead = document.createElement("thead");
+// const tblBody = document.createElement("tbody");
+// tblBody.setAttribute('id', 'tblBody')
+
+
+const tblsBody = document.querySelector("#tblBody")
+
+fetch("data/todo.json")
+    .then(res => res.json())
+    .then(data => {
+        for (let item of data) {
+            const tblBody = document.createElement("tbody");
+            const newRow = document.createElement("tr");
+            const title = document.createElement("td")
+            const content = document.createElement("td")
+            const categories = document.createElement("td");
+            const date = document.createElement("td");
+         title.innerText = item.title
+         content.innerText = item.content
+         categories.innerText = item.categories
+         date.innerText = item.date
+            newRow.appendChild(title)
+            newRow.appendChild(content)
+            newRow.appendChild(categories)
+            newRow.appendChild(date)
+            tblsBody.appendChild(newRow)
+            // practiceTable.appendChild(tblsBody)
+
+        }})
+
+    //     data.forEach(jsonData => {
+    //         const postDiv = document.createElement("div");
+    //         postDiv.innerHTML = `
+    //         <h2>${jsonData.title}</h2>
+    //         <p>${jsonData.content}</p>
+    //         <h5>${jsonData.categories}</h5>
+    //         <h6>${jsonData.date}</h6>
+    //         `
+    //         jsonDiv.appendChild(postDiv)
+    //     })
+    //
+    // })
