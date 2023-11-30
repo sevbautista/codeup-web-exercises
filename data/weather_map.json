@@ -1,0 +1,43 @@
+[
+  {
+    "date": "date",
+    "temperature": "temperature",
+    "icon": "icon",
+    "description": "description",
+    "humidity": "humidity",
+    "wind": "wind",
+    "pressure": "pressure"
+  },{
+    "date": "date",
+    "temperature": "temperature",
+    "icon": "icon",
+    "description": "description",
+    "humidity": "humidity",
+    "wind": "wind",
+    "pressure": "pressure"
+  },{
+    "date": "date",
+    "temperature": "temperature",
+    "icon": "icon",
+    "description": "description",
+    "humidity": "humidity",
+    "wind": "wind",
+    "pressure": "pressure"
+  },{
+    "date": "date",
+    "temperature": "temperature",
+    "icon": "icon",
+    "description": "description",
+    "humidity": "humidity",
+    "wind": "wind",
+    "pressure": "pressure"
+  },{
+    "date": "date",
+    "temperature": "temperature",
+    "icon": "icon",
+    "description": "description",
+    "humidity": "humidity",
+    "wind": "wind",
+    "pressure": "pressure"
+  }
+]

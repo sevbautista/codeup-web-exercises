@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+}
+nav {
+    background-color: #0e6dfd;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#searchBar {
+    margin-top: 25px;
+}
+
+#search {
+    color: grey;
+}
+
+#find {
+    background-color: lightskyblue;
+    color: white;
+    border-radius: 3px;
+}
+
+#weather{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h4 {
+    background-color: lightgrey;
+}
+
+.theWeather {
+    border-radius: 5px;
+    border-color: lightslategrey;
+    border-style: solid;
+}
