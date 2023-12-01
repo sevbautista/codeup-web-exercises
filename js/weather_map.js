@@ -4,7 +4,7 @@
 mapboxgl.accessToken = MAPBOX_API;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/dark-v11', // style URL
+    style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
     center: [-97.32371179959955, 32.75419564288404,], // starting position [lng, lat]
     zoom: 10, // starting zoom
 });
@@ -14,7 +14,8 @@ const map = new mapboxgl.Map({
 let searchGeo = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
-    marker: false
+    marker: true,
+    draggable: true
 })
 map.addControl(searchGeo)
 
@@ -29,20 +30,45 @@ searchGeo.on('result', (e) => {
 })
 
 
-// =============WORK ON THIS SECTION BELOW===============
-// const marker1 = new mapboxgl.Marker({
-//     color: "#d293a6",
-//     draggable: true
-// }).setLngLat([-97.414319023602, 32.68064132548091,])
-//     .addTo(map);
-//
-//
-// const Popup1 = new mapboxgl.Popup()
-//     .setHTML("<p>moveable marker</p>")
-//
-// marker1.setPopup(Popup1);
+
+// Add a new Marker.
+const marker = new mapboxgl.Marker({
+    color: '#F84C4C', // color it red
+    draggable: true,
+});
+
+// Define the animation.
+function animateMarker(timestamp) {
+    const radius = 20;
+
+    /*
+    Update the data to a new position
+    based on the animation timestamp.
+    The divisor in the expression `timestamp / 1000`
+    controls the animation speed.
+    */
+    marker.setLngLat([
+        Math.cos(timestamp / 1000) * radius,
+        Math.sin(timestamp / 1000) * radius
+    ]);
+
+    /*
+    Ensure the marker is added to the map.
+    This is safe to call if it's already added.
+    */
+    marker.addTo(map);
+
+// Request the next frame of the animation.
+    requestAnimationFrame(animateMarker);
+}
+
+// Start the animation.
+requestAnimationFrame(animateMarker);
+
+// // =============WORK ON THIS SECTION BELOW===============
+
 // const alamoInfo = {
-//     address: "The Dallas Aquarium, Dallas",
+//     address: "The Alamo, San Antonio",
 //     popupHTML: "<p>Welcome to the Alamo!</p>"
 // };
 
@@ -58,17 +84,48 @@ searchGeo.on('result', (e) => {
 //     });
 // }
 //
-// placeMarkerAndPopup(alamoInfo, ACCESS_TOKEN, map);
+// placeMarkerAndPopup( MAPBOX_API, map);
+// const marker1 = new mapboxgl.Marker({
+//     color: "#d293a6",
+//     draggable: true
+// }).setLngLat(weatherData([lat], [lon]))
+//     .addTo(map);
+//
+//
+// const Popup1 = new mapboxgl.Popup()
+//     .setHTML("<p>moveable marker</p>")
+//
+// marker1.setPopup(Popup1);
+// const alamoInfo = {
+//     address: "The Dallas Aquarium, Dallas",
+//     popupHTML: "<p>Welcome to the Alamo!</p>"
+// };
+
+
+//
+// function placeMarkerAndPopup(info, token, map) {
+//     geocode(info.address, token).then( coords => {
+//         let popup = new mapboxgl.Popup()
+//             .setHTML(info.popupHTML);
+//         let marker = new mapboxgl.Marker()
+//             .setLngLat(coords)
+//             .addTo(map)
+//             .setPopup(popup);
+//         popup.addTo(map);
+//     });
+// }
+// //
+// placeMarkerAndPopup(ala,  MAPBOX_API, map);
 
 // ==========WORK ON THIS SECTION ABOVE==================
-const weatherDiv = document.getElementById('forecast');
-const forecastData = [];
+// const weatherDiv = document.getElementById('forecast');
+// const forecastData = [];
 
 function weatherData(lat, long) {
     let html = "";
 
     fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
-        "&appid=" + OPEN_WEATHER_API, {units: "imperial"})
+        "&appid=" + OPEN_WEATHER_API + `&units=imperial`)
         .then(data => data.json())
         .then(result => {
             const navCity = document.querySelector('h5')
@@ -95,7 +152,7 @@ function weatherData(lat, long) {
                 // const forecastDiv = document.createElement("div");
                 html += `<div class="weather-card">
             <h4>${date.toLocaleString()}</h4>
-            <p>${weather.main.temp}\u00B0</p>
+            <p>${weather.main.temp}\u00B0F</p>
             <img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" alt="${weather.weather[0].icon}">
             <hr>
             <p>Description: ${weather.weather[0].description}</p>
