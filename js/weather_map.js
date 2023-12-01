@@ -1,9 +1,5 @@
 "use strict";
 
-function clearField() {
-    document.getElementById("search").value = "";
-}
-
 
 mapboxgl.accessToken = MAPBOX_API;
 const map = new mapboxgl.Map({
@@ -12,6 +8,25 @@ const map = new mapboxgl.Map({
     center: [-97.32371179959955, 32.75419564288404,], // starting position [lng, lat]
     zoom: 10, // starting zoom
 });
+
+
+// SEARCH BOX
+let searchGeo = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: false
+})
+map.addControl(searchGeo)
+
+searchGeo.on('result', (e) => {
+    console.log(e.result);
+    let searchLon = e.result.geometry.coordinates[0];
+    let searchLat = e.result.geometry.coordinates[1];
+    weatherData(searchLat, searchLon)
+    let weatherClear = document.getElementById('weather')
+    weatherClear.innerHTML = "";
+
+})
 
 
 // =============WORK ON THIS SECTION BELOW===============
@@ -49,64 +64,97 @@ const map = new mapboxgl.Map({
 const weatherDiv = document.getElementById('forecast');
 const forecastData = [];
 
-fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
-    `lat=32.75419564288404&lon=-97.32371179959955` + `&units=imperial` +
-    `&appid=${OPEN_WEATHER_API}`)
-    .then(data => data.json())
-    .then(result => {
+function weatherData(lat, long) {
+    let html = "";
 
-        const day = result.list;
+    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
+        "&appid=" + OPEN_WEATHER_API, {units: "imperial"})
+        .then(data => data.json())
+        .then(result => {
+            const navCity = document.querySelector('h5')
+            navCity.innerText =
+                `Current City: ${result.city.name}`
 
-        for (let i = 0; i < day.length; i += 8) {
-            const weather = day[i];
-            const date = new Date(weather.dt * 1000);
+            const day = result.list;
 
-            forecastData.push({
-                date: date.toLocaleDateString(),
-                temperature: weather.main.temp,
-                icon: weather.weather[0].icon,
-                description: weather.weather[0].description,
-                humidity: weather.main.humidity,
-                wind: weather.wind.speed,
-                pressure: weather.main.pressure
-            });
-        }
-        updateForecastHTML();
-    });
+            for (let i = 0; i < day.length; i += 8) {
+                const weather = day[i];
+                const date = new Date(weather.dt * 1000);
 
+                // forecastData.push({
+                //     date: date.toLocaleDateString(),
+                //     temperature: weather.main.temp,
+                //     icon: weather.weather[0].icon,
+                //     description: weather.weather[0].description,
+                //     humidity: weather.main.humidity,
+                //     wind: weather.wind.speed,
+                //     pressure: weather.main.pressure
+                // });
+                // updateForecastHTML(weather);
 
-function updateForecastHTML() {
-    forecastData.forEach(data => {
-        const forecastDiv = document.createElement("div");
-        forecastDiv.innerHTML =
-            `<h4>${data.date}</h4>
-            <p>${data.temperature}\u00B0</p>
-            <img src="http://openweathermap.org/img/w/${data.icon}.png" alt="${data.icon}">
+                // const forecastDiv = document.createElement("div");
+                html += `<div class="weather-card">
+            <h4>${date.toLocaleString()}</h4>
+            <p>${weather.main.temp}\u00B0</p>
+            <img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" alt="${weather.weather[0].icon}">
             <hr>
-            <p>Description: ${data.description}</p>
-            <p>Humidity: ${data.humidity}</p>
-            <hr
-            <p>Wind: ${data.wind}</p>
-            <hr
-            <p>Pressure: ${data.pressure}</p>
-            
-       `;
+            <p>Description: ${weather.weather[0].description}</p>
+            <p>Humidity: ${weather.main.humidity}</p>
+            <hr>
+            <p>Wind: ${weather.wind.speed}</p>
+            <hr>
+            <p>Pressure: ${weather.main.pressure}</p>
+            </div>`;
 
-        forecastDiv.setAttribute('class', "theWeather");
-        weatherDiv.appendChild(forecastDiv);
-    });
+
+                // forecastDiv.setAttribute('class', "theWeather");
+                // weatherDiv.appendChild(forecastDiv);
+            }
+
+            const weatherId = document.getElementById("weather")
+            const forecastDiv = document.createElement("div");
+            forecastDiv.setAttribute('class', "theWeather");
+            weatherId.appendChild(forecastDiv).innerHTML = html;
+
+
+        });
 }
 
-fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
-    `lat=32.75419564288404&lon=-97.32371179959955` + `&units=imperial` +
-    `&appid=${OPEN_WEATHER_API}`)
-    .then(data => data.json())
-    .then(result => {
-        console.log(result)
-        const navCity = document.querySelector('h5')
-        navCity.innerText =
-            `Current City: ${result.city.name}`
-    })
+// function updateForecastHTML(data) {
+//     // forecastData.forEach(data => {
+//         const forecastDiv = document.createElement("div");
+//         forecastDiv.innerHTML =
+//             `<h4>${data.date}</h4>
+//             <p>${data.temperature}\u00B0</p>
+//             <img src="http://openweathermap.org/img/w/${data.icon}.png" alt="${data.icon}">
+//             <hr>
+//             <p>Description: ${data.description}</p>
+//             <p>Humidity: ${data.humidity}</p>
+//             <hr
+//             <p>Wind: ${data.wind}</p>
+//             <hr
+//             <p>Pressure: ${data.pressure}</p>
+//
+//        `;
+//
+//         forecastDiv.setAttribute('class', "theWeather");
+//         weatherDiv.appendChild(forecastDiv);
+//     // });
+// }
+
+
+// fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
+//     `lat=32.75419564288404&lon=-97.32371179959955` + `&units=imperial` +
+//     `&appid=${OPEN_WEATHER_API}`)
+//     .then(data => data.json())
+//     .then(result => {
+//         console.log(result)
+//         const navCity = document.querySelector('h5')
+//         navCity.innerText =
+//             `Current City: ${result.city.name}`
+//     })
+
+weatherData(32.75419564288404, -97.32371179959955)
 
 document.getElementById('find').addEventListener('click', function () {
     let currentLocation = geocode(document.getElementById('search').value, MAPBOX_API);
@@ -126,8 +174,7 @@ function geocode(search, token) {
             console.log(data)
             return data.features[0].center
         });
-
-
+}
 
 
 // function reverseGeocode(coordinates, token) {
@@ -137,7 +184,7 @@ function geocode(search, token) {
 //         .then( res => res.json() )
 //         // to get all the data from the request, comment out the following three lines...
 //         .then( data => data.features[0].place_name );
-}
+// }
 
 
 
