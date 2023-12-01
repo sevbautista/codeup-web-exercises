@@ -398,7 +398,7 @@ favePoke.addEventListener('click', () => {
 
 })
 
-const jsonDiv =document.querySelector('#json')
+const jsonDiv = document.querySelector('#json')
 fetch("data/todo.json")
     .then(res => res.json())
     .then(data => {
@@ -436,10 +436,10 @@ fetch("data/todo.json")
             const content = document.createElement("td")
             const categories = document.createElement("td");
             const date = document.createElement("td");
-         title.innerText = item.title
-         content.innerText = item.content
-         categories.innerText = item.categories
-         date.innerText = item.date
+            title.innerText = item.title
+            content.innerText = item.content
+            categories.innerText = item.categories
+            date.innerText = item.date
             newRow.appendChild(title)
             newRow.appendChild(content)
             newRow.appendChild(categories)
@@ -447,17 +447,30 @@ fetch("data/todo.json")
             tblsBody.appendChild(newRow)
             // practiceTable.appendChild(tblsBody)
 
-        }})
+        }
+    })
 
-    //     data.forEach(jsonData => {
-    //         const postDiv = document.createElement("div");
-    //         postDiv.innerHTML = `
-    //         <h2>${jsonData.title}</h2>
-    //         <p>${jsonData.content}</p>
-    //         <h5>${jsonData.categories}</h5>
-    //         <h6>${jsonData.date}</h6>
-    //         `
-    //         jsonDiv.appendChild(postDiv)
-    //     })
-    //
-    // })
+//     data.forEach(jsonData => {
+//         const postDiv = document.createElement("div");
+//         postDiv.innerHTML = `
+//         <h2>${jsonData.title}</h2>
+//         <p>${jsonData.content}</p>
+//         <h5>${jsonData.categories}</h5>
+//         <h6>${jsonData.date}</h6>
+//         `
+//         jsonDiv.appendChild(postDiv)
+//     })
+//
+// })
+
+// }
+
+/*
+ * Complete the 'diagonalDifference' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+ */
+
+
+
