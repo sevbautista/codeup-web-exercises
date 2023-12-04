@@ -15,7 +15,7 @@ let searchGeo = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
     marker: {
-        draggable: true  // Make the marker draggable
+        draggable: true
     }
 
 })
@@ -31,12 +31,7 @@ searchGeo.on('result', (e) => {
     weatherClear.innerHTML = "";
 
 })
-// MARKER DRAG
-searchGeo.on('marker.dragend', (e) => {
-    let newLon = e.lngLat.lng;
-    let newLat = e.lngLat.lat;
-    weatherData(newLat, newLon);
-});
+
 
 // FETCH AND DISPLAY WEATHER DATA
 function weatherData(lat, long) {
@@ -65,11 +60,11 @@ function weatherData(lat, long) {
             <img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" alt="${weather.weather[0].icon}">
             <hr>
             <p>Description: ${weather.weather[0].description}</p>
-            <p>Humidity: ${weather.main.humidity}</p>
+            <p>Humidity: ${weather.main.humidity}&#37</p>
             <hr>
-            <p>Wind: ${weather.wind.speed}</p>
+            <p>Wind: ${weather.wind.speed} mph</p>
             <hr>
-            <p>Pressure: ${weather.main.pressure}</p>
+            <p>Pressure: ${weather.main.pressure} mb</p>
             </div>`;
 
             }
