@@ -1,6 +1,6 @@
 "use strict";
 
-
+// INITIALIZING MAP
 mapboxgl.accessToken = MAPBOX_API;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
@@ -21,6 +21,7 @@ let searchGeo = new MapboxGeocoder({
 })
 map.addControl(searchGeo)
 
+// SEARCH RESULTS
 searchGeo.on('result', (e) => {
     console.log(e.result);
     let searchLon = e.result.geometry.coordinates[0];
@@ -30,12 +31,14 @@ searchGeo.on('result', (e) => {
     weatherClear.innerHTML = "";
 
 })
+// MARKER DRAG
 searchGeo.on('marker.dragend', (e) => {
     let newLon = e.lngLat.lng;
     let newLat = e.lngLat.lat;
     weatherData(newLat, newLon);
 });
 
+// FETCH AND DISPLAY WEATHER DATA
 function weatherData(lat, long) {
     let html = "";
 
@@ -80,9 +83,10 @@ function weatherData(lat, long) {
         });
 }
 
-
+// INITIAL WEATHER DATA LOCATION
 weatherData(32.75419564288404, -97.32371179959955)
 
+// SEARCH BUTTON EVENT LISTENER
 document.getElementById('find').addEventListener('click', function () {
     let currentLocation = geocode(document.getElementById('search').value, MAPBOX_API);
     currentLocation.then(result => {
@@ -91,7 +95,7 @@ document.getElementById('find').addEventListener('click', function () {
     })
 })
 
-
+// GEOCODE LOCATION
 function geocode(search, token) {
     let baseUrl = 'https://api.mapbox.com';
     let endPoint = '/geocoding/v5/mapbox.places/';
@@ -102,6 +106,4 @@ function geocode(search, token) {
             return data.features[0].center
         });
 }
-
-//=================//=================//=================//=================//=================//=================
 

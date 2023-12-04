@@ -2,6 +2,8 @@ body {
     font-family: sans-serif;
     font-size: small;
     background-color: #bbd1f3;
+    background-image: linear-gradient(to bottom, #FAEBD7, #7AADED);
+
 }
 
 nav {
@@ -41,11 +43,6 @@ h4 {
     background-color: lightgrey;
 }
 
-#forecast {
-    display: flex;
-    justify-content: space-between;
-}
-
 .theWeather {
     display: contents;
 
@@ -64,9 +61,4 @@ h4 {
 
 hr {
     opacity: 35%;
-}
-
-#mapboxgl-marker{
-    color: #0E0E0E;
-    background-image: url("img/dogface.jpg");
 }
