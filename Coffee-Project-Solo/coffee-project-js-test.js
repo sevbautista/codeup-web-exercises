@@ -3,7 +3,7 @@
 // import renderCoffee from "./renderCoffees.js";
 import {coffees} from "./coffeeList.js";
 // import addNewCoffee from "./addNewCoffee.js";
-
+import renderCoffee from "./renderCoffees.js";
 
 
 // function renderCoffees(coffees) {
