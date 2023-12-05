@@ -1,4 +1,5 @@
 "use strict";
+
 // DIAGONAL DIFFERENCE
 function diagonalDifference(arr) {
     let LRarray = [];
@@ -23,6 +24,35 @@ function diagonalDifference(arr) {
     RLarray.forEach((num) => {
         RLtotal += num;
     })
-    console.log(Math.abs(LRtotal - RLtotal))}
+    console.log(Math.abs(LRtotal - RLtotal))
+}
 
-    diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]])
+diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]])
+
+//===========
+let ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+
+let sum = 0
+let result = []
+
+function aVeryBigSum(ar) {
+    for (let i = 0; i < ar.length; i++) {
+        sum += ar[i];
+    }
+    return sum
+
+}
+
+console.log(sum)
+
+// =========================
+
+
+function birthdayCakeCandles(candles) {
+    // Write your code here
+    for (let i = 0; i < candles.length; i++) {
+    if (candles[i] > )
+    }
+}
+
+console.log(candles)

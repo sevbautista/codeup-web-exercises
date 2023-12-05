@@ -21,8 +21,14 @@ let searchGeo = new MapboxGeocoder({
 })
 map.addControl(searchGeo)
 
+// Add reference to the map marker
+let marker = null;
+
+
 // SEARCH RESULTS
 searchGeo.on('result', (e) => {
+    marker = searchGeo._marker;
+
     console.log(e.result);
     let searchLon = e.result.geometry.coordinates[0];
     let searchLat = e.result.geometry.coordinates[1];
@@ -102,3 +108,15 @@ function geocode(search, token) {
         });
 }
 
+marker.on('dragend', function () {
+    let markerLngLat = marker.getLngLat();
+    console.log('Marker Dragged to:', markerLngLat);
+
+    let markerLon = markerLngLat.lng;
+    let markerLat = markerLngLat.lat;
+
+    // Check if the coordinates are correct
+    console.log('New Coordinates:', markerLat, markerLon);
+
+    weatherData(markerLat, markerLon);
+});
