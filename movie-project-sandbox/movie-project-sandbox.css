@@ -1,0 +1,44 @@
+
+
+.theMovie {
+    justify-content: flex-start;
+    display: flex;
+    width: max-content;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    margin-right: -50px; /* Overlapping margin to create a fanned effect */
+    cursor: pointer;
+    transition: transform 0.3s, margin 0.3s;
+    background-color: #99872E;
+
+}
+
+.card:first-child {
+    transform: rotate(15deg);
+    background-color: #8b71f6/* Rotate the first card */
+}
+
+.card:last-child {
+    transform: rotate(-15deg);
+    background-color: #8A223A/* Rotate the last card */
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/*#loading-message {*/
+/*    display: none;*/
+/*    font-size: 18px;*/
+/*    color: #333;*/
+/*}*/
